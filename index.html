@@ -551,6 +551,64 @@
       position: relative;
       height: 560px;
     }
+    .map-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .map-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 60% center;
+      display: block;
+      filter: brightness(0.9) contrast(1.05);
+    }
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .map-city {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+    .map-city--tokyo  { top: 32%; right: 10%; }
+    .map-city--pattaya { bottom: 22%; left: 30%; }
+    .map-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      background: rgba(201,168,76,0.35);
+      box-shadow: 0 0 10px rgba(201,168,76,0.7);
+      animation: mapPulse 2.4s ease-in-out infinite;
+      margin-bottom: 4px;
+    }
+    .map-dot--pattaya { animation-delay: 0.6s; }
+    @keyframes mapPulse {
+      0%,100% { box-shadow: 0 0 8px rgba(201,168,76,0.6); }
+      50% { box-shadow: 0 0 16px rgba(201,168,76,1), 0 0 30px rgba(201,168,76,0.4); }
+    }
+    .map-city-name {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+    .map-city-sub {
+      font-size: 7px;
+      color: rgba(201,168,76,0.6);
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
 
     /* ─── MEDIA ─── */
     #media { background: var(--black); }
@@ -1038,118 +1096,13 @@
 
       <!-- Animated Map -->
       <div class="network-map-wrap fade-in" id="networkMap" style="transition-delay:0.25s;" aria-label="Map showing connection between Japan and Thailand">
-        <svg viewBox="0 0 500 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;" id="mapSvg">
-          <defs>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-
-          <!-- Grid overlay -->
-          <g opacity="0.05" stroke="#C9A84C" stroke-width="0.5">
-            <line x1="0" y1="112" x2="500" y2="112"/>
-            <line x1="0" y1="224" x2="500" y2="224"/>
-            <line x1="0" y1="336" x2="500" y2="336"/>
-            <line x1="0" y1="448" x2="500" y2="448"/>
-            <line x1="100" y1="0" x2="100" y2="560"/>
-            <line x1="200" y1="0" x2="200" y2="560"/>
-            <line x1="300" y1="0" x2="300" y2="560"/>
-            <line x1="400" y1="0" x2="400" y2="560"/>
-          </g>
-
-          <!-- Ocean scatter dots -->
-          <g opacity="0.06" fill="#C9A84C">
-            <circle cx="48"  cy="90"  r="1.2"/><circle cx="78"  cy="130" r="1"/>
-            <circle cx="140" cy="80"  r="1.2"/><circle cx="168" cy="110" r="1"/>
-            <circle cx="60"  cy="200" r="1"/>  <circle cx="110" cy="240" r="1.2"/>
-            <circle cx="440" cy="120" r="1"/>  <circle cx="470" cy="160" r="1.2"/>
-            <circle cx="420" cy="340" r="1"/>  <circle cx="460" cy="400" r="1.2"/>
-            <circle cx="50"  cy="380" r="1.2"/><circle cx="88"  cy="440" r="1"/>
-          </g>
-
-          <!-- CHINA simplified -->
-          <path d="M125,58 L175,50 L215,58 L240,72 L248,98 L244,128 L230,150 L210,165 L188,172 L165,168 L148,152 L138,130 L135,105 L130,82 Z"
-                fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.18)" stroke-width="0.8"/>
-
-          <!-- KOREA -->
-          <path d="M272,78 L286,72 L298,80 L302,100 L296,120 L280,126 L268,116 L265,96 Z"
-                fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.18)" stroke-width="0.7"/>
-
-          <!-- JAPAN — Honshu -->
-          <path d="M324,52 L346,42 L370,48 L388,62 L392,82 L384,102 L366,118 L348,124 L330,116 L318,98 L314,76 Z"
-                fill="rgba(201,168,76,0.14)" stroke="rgba(201,168,76,0.45)" stroke-width="0.9"/>
-          <!-- Hokkaido -->
-          <path d="M340,22 L368,16 L390,28 L394,46 L374,52 L348,48 Z"
-                fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.35)" stroke-width="0.8"/>
-          <!-- Kyushu -->
-          <path d="M306,120 L320,114 L328,124 L322,140 L308,144 L300,132 Z"
-                fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.35)" stroke-width="0.7"/>
-          <!-- Shikoku -->
-          <path d="M340,118 L358,112 L364,122 L354,130 L338,126 Z"
-                fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.35)" stroke-width="0.7"/>
-
-          <!-- SOUTHEAST ASIA mainland -->
-          <!-- Myanmar/Burma shape -->
-          <path d="M155,196 L178,188 L196,200 L202,228 L196,260 L184,280 L170,286 L158,272 L154,244 L152,218 Z"
-                fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.14)" stroke-width="0.6"/>
-          <!-- Vietnam -->
-          <path d="M248,180 L265,174 L278,184 L284,212 L280,244 L272,268 L260,278 L252,266 L254,238 L250,210 L244,192 Z"
-                fill="rgba(201,168,76,0.05)" stroke="rgba(201,168,76,0.18)" stroke-width="0.7"/>
-
-          <!-- THAILAND — main body -->
-          <path d="M188,218 L210,210 L228,220 L236,248 L232,278 L222,304 L210,316 L200,308 L198,282 L196,256 L188,236 Z"
-                fill="rgba(201,168,76,0.14)" stroke="rgba(201,168,76,0.45)" stroke-width="0.9"/>
-          <!-- Thai peninsula (south) -->
-          <path d="M206,318 L220,310 L226,334 L220,360 L210,374 L202,360 L202,336 Z"
-                fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.35)" stroke-width="0.7"/>
-
-          <!-- Laos / Cambodia faint -->
-          <path d="M228,230 L246,222 L256,238 L250,264 L234,270 L220,256 L220,238 Z"
-                fill="rgba(201,168,76,0.03)" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
-
-          <!-- TOKYO marker -->
-          <g id="tokyoGroup" filter="url(#glow)">
-            <circle cx="354" cy="80" r="14" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="1" id="tokyoPulse1"/>
-            <circle cx="354" cy="80" r="9"  fill="none" stroke="rgba(201,168,76,0.22)" stroke-width="1" id="tokyoPulse2"/>
-            <circle cx="354" cy="80" r="4.5" fill="none" stroke="var(--gold)" stroke-width="1.5"/>
-            <circle cx="354" cy="80" r="2"   fill="var(--gold)"/>
-          </g>
-          <text x="364" y="76" fill="var(--gold)" font-size="9.5" font-family="Inter,sans-serif" font-weight="700" letter-spacing="0.08em">TOKYO</text>
-          <text x="364" y="88" fill="rgba(201,168,76,0.55)" font-size="7.5" font-family="Inter,sans-serif" letter-spacing="0.06em">JAPAN</text>
-
-          <!-- PATTAYA marker -->
-          <g id="pattayaGroup" filter="url(#glow)">
-            <circle cx="222" cy="298" r="16" fill="none" stroke="rgba(201,168,76,0.1)"  stroke-width="1" id="pattayaPulse1"/>
-            <circle cx="222" cy="298" r="10" fill="none" stroke="rgba(201,168,76,0.22)" stroke-width="1" id="pattayaPulse2"/>
-            <circle cx="222" cy="298" r="5"  fill="none" stroke="var(--gold)" stroke-width="1.8"/>
-            <circle cx="222" cy="298" r="2.5" fill="var(--gold)"/>
-          </g>
-          <text x="236" y="294" fill="var(--gold)" font-size="9.5" font-family="Inter,sans-serif" font-weight="700" letter-spacing="0.08em">PATTAYA</text>
-          <text x="236" y="306" fill="rgba(201,168,76,0.55)" font-size="7.5" font-family="Inter,sans-serif" letter-spacing="0.06em">K2 PATTAYA</text>
-
-          <!-- Animated connection arc -->
-          <path id="connectionArc"
-                d="M354,80 C430,130 420,210 380,250 C340,290 280,290 222,298"
-                fill="none"
-                stroke="var(--gold)"
-                stroke-width="1.4"
-                stroke-dasharray="8,5"
-                stroke-dashoffset="600"
-                opacity="0.65"
-                stroke-linecap="round"/>
-
-          <!-- Moving dot -->
-          <circle id="movingDot" cx="354" cy="80" r="3.5" fill="var(--gold)" opacity="0" filter="url(#glow)"/>
-
-          <!-- Distance indicator -->
-          <text x="388" y="192" fill="rgba(201,168,76,0.38)" font-size="7.5" font-family="Inter,sans-serif" letter-spacing="0.1em" transform="rotate(-42, 388, 192)">~4,600 km</text>
-        </svg>
+        <div class="map-image-wrap">
+          <img src="images/map.jpeg" alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand" class="map-img"/>
+        </div>
       </div>
 
     </div>
   </div>
-</section>
 
 
 <!-- ═══════════════════════════ MEDIA ═══════════════════════════ -->
