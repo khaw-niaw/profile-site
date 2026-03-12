@@ -518,26 +518,6 @@
       line-height: 1.5;
     }
 
-    .tl-dot {
-      display: none;
-      position: absolute;
-      left: 72px;
-      top: 8px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      border: 1.5px solid var(--gold);
-      background: var(--surface);
-      transform: translateX(-50%);
-    }
-
-    .tl-dot::after {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px solid rgba(201, 168, 76, 0.15);
-    }
 
     .tl-body {
       padding-left: 4px;
@@ -752,73 +732,6 @@
       display: block;
       filter: brightness(0.9) contrast(1.05);
     }
-
-    .map-overlay {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .map-city {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
-    }
-
-    .map-city--tokyo {
-      top: 32%;
-      right: 10%;
-    }
-
-    .map-city--pattaya {
-      bottom: 22%;
-      left: 30%;
-    }
-
-    .map-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      border: 1.5px solid var(--gold);
-      background: rgba(201, 168, 76, 0.35);
-      box-shadow: 0 0 10px rgba(201, 168, 76, 0.7);
-      animation: mapPulse 2.4s ease-in-out infinite;
-      margin-bottom: 4px;
-    }
-
-    .map-dot--pattaya {
-      animation-delay: 0.6s;
-    }
-
-    @keyframes mapPulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 8px rgba(201, 168, 76, 0.6);
-      }
-
-      50% {
-        box-shadow: 0 0 16px rgba(201, 168, 76, 1), 0 0 30px rgba(201, 168, 76, 0.4);
-      }
-    }
-
-    .map-city-name {
-      font-size: 9px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      line-height: 1;
-    }
-
-    .map-city-sub {
-      font-size: 7px;
-      color: rgba(201, 168, 76, 0.6);
-      letter-spacing: 0.08em;
-      line-height: 1;
-    }
-
 
     /* ─── MEDIA ─── */
     #media {
@@ -1122,10 +1035,6 @@
         column-gap: 36px;
       }
 
-      .tl-dot {
-        left: 64px;
-      }
-
       footer {
         flex-direction: column;
         gap: 14px;
@@ -1286,7 +1195,7 @@
 
         <div class="tl-item fade-in" style="transition-delay:0.05s;">
           <div class="tl-year">2007</div>
-          <div class="tl-dot" aria-hidden="true"></div>
+
           <div class="tl-body">
             <h3 class="tl-title">株式会社C・S・R 設立</h3>
             <p class="tl-desc">26歳で独立。東京・池袋を拠点に経営を開始。自らの力でビジネスの世界に踏み出した最初の一歩。</p>
@@ -1295,7 +1204,7 @@
 
         <div class="tl-item fade-in" style="transition-delay:0.12s;">
           <div class="tl-year">2014</div>
-          <div class="tl-dot" aria-hidden="true"></div>
+
           <div class="tl-body">
             <h3 class="tl-title">株式会社feemo 設立</h3>
             <p class="tl-desc">C・S・Rを譲渡後、新会社で広告・マーケティング事業を展開。デジタルの波を掴み、新たなフェーズへ。</p>
@@ -1304,7 +1213,7 @@
 
         <div class="tl-item fade-in" style="transition-delay:0.19s;">
           <div class="tl-year">2016</div>
-          <div class="tl-dot" aria-hidden="true"></div>
+
           <div class="tl-body">
             <h3 class="tl-title">マレーシアへ移住</h3>
             <p class="tl-desc">東南アジアを拠点にグローバル展開を開始。国境を越え、より広いビジネスの視野へ。</p>
@@ -1313,7 +1222,7 @@
 
         <div class="tl-item fade-in" style="transition-delay:0.26s;">
           <div class="tl-year">2017</div>
-          <div class="tl-dot" aria-hidden="true"></div>
+
           <div class="tl-body">
             <h3 class="tl-title">フィリピン法人設立</h3>
             <p class="tl-desc">映像制作・開発のオフショア拠点を構築。アジア全域にネットワークを着実に広げていく。</p>
@@ -1322,7 +1231,7 @@
 
         <div class="tl-item fade-in" style="transition-delay:0.33s;">
           <div class="tl-year">2020</div>
-          <div class="tl-dot" aria-hidden="true"></div>
+
           <div class="tl-body">
             <h3 class="tl-title">コロナ禍でタイへ</h3>
             <p class="tl-desc">フィリピンのロックダウンを受け緊急脱出。パタヤへ移り住み、新たな人生の拠点を見つける。</p>
@@ -1331,7 +1240,7 @@
 
         <div class="tl-item fade-in" style="transition-delay:0.4s;">
           <div class="tl-year">2021〜</div>
-          <div class="tl-dot" aria-hidden="true"></div>
+
           <div class="tl-body">
             <h3 class="tl-title">パタヤで本格事業開始</h3>
             <p class="tl-desc">K2 PATTAYA を中核に、リユース・飲食・進出支援の3本柱で展開中。パタヤで人を繋ぐ男として、コミュニティを育て続けている。</p>
@@ -1637,11 +1546,8 @@
     <script>
       /* ─── NAVBAR SCROLL ─── */
       const navbar = document.getElementById('navbar');
-      let lastY = 0;
       window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-        navbar.classList.toggle('scrolled', y > 60);
-        lastY = y;
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
       }, { passive: true });
 
       /* ─── MOBILE MENU ─── */
@@ -1680,76 +1586,6 @@
           heroBg.style.transform = `translateY(${s * 0.38}px)`;
         }
       }, { passive: true });
-
-      /* ─── NETWORK MAP ANIMATION ─── */
-      let mapAnimated = false;
-      const mapObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && !mapAnimated) {
-            mapAnimated = true;
-            animateMap();
-            mapObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25 });
-
-      const networkMapEl = document.getElementById('networkMap');
-      if (networkMapEl) mapObserver.observe(networkMapEl);
-
-      function animateMap() {
-        const arc = document.getElementById('connectionArc');
-        const dot = document.getElementById('movingDot');
-        if (!arc || !dot) return;
-
-        /* Draw the dashed line */
-        arc.style.transition = 'stroke-dashoffset 2.4s cubic-bezier(0.4,0,0.2,1) 0.2s';
-        arc.style.strokeDashoffset = '0';
-
-        /* Pulse rings */
-        animatePulse('tokyoPulse1', 2.8, 0);
-        animatePulse('tokyoPulse2', 2.8, 0.5);
-        animatePulse('pattayaPulse1', 2.8, 0.4);
-        animatePulse('pattayaPulse2', 2.8, 0.9);
-
-        /* Moving dot along path */
-        let t = 0;
-        dot.setAttribute('opacity', '1');
-        const arcLength = arc.getTotalLength ? arc.getTotalLength() : 380;
-
-        function moveDot() {
-          t += 0.0035;
-          if (t > 1) t = 0;
-          try {
-            const pt = arc.getPointAtLength(t * arcLength);
-            dot.setAttribute('cx', pt.x);
-            dot.setAttribute('cy', pt.y);
-            const fade = Math.sin(t * Math.PI);
-            dot.setAttribute('opacity', (fade * 0.9).toFixed(3));
-          } catch (e) { }
-          requestAnimationFrame(moveDot);
-        }
-        setTimeout(moveDot, 800);
-      }
-
-      function animatePulse(id, duration, delay) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const baseR = parseFloat(el.getAttribute('r'));
-        const maxR = baseR + 7;
-        let start = null;
-        function step(ts) {
-          if (!start) start = ts + delay * 1000;
-          const elapsed = ts - start;
-          if (elapsed < 0) { requestAnimationFrame(step); return; }
-          const cycle = (elapsed % (duration * 1000)) / (duration * 1000);
-          const r = baseR + (maxR - baseR) * Math.sin(cycle * Math.PI);
-          const opacity = 0.25 * (1 - cycle);
-          el.setAttribute('r', r.toFixed(2));
-          el.setAttribute('opacity', opacity.toFixed(3));
-          requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      }
 
       /* ─── ACTIVE NAV LINK ─── */
       const sections = document.querySelectorAll('section[id]');
