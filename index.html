@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chieto Amano — パタヤで人を繋ぐ男. Japan-Thailand business connector based in Pattaya. Entrepreneur, Connector, Founder of K2 Pattaya.">
-  <meta name="keywords" content="Chieto Amano, 天野智人, Pattaya, K2 Pattaya, Japan Thailand business, connector, entrepreneur, Kanpai Reuse, MENLABO">
+  <meta name="description"
+    content="Chieto Amano — パタヤで人を繋ぐ男. Japan-Thailand business connector based in Pattaya. Entrepreneur, Connector, Founder of K2 Pattaya.">
+  <meta name="keywords"
+    content="Chieto Amano, 天野智人, Pattaya, K2 Pattaya, Japan Thailand business, connector, entrepreneur, Kanpai Reuse, MENLABO">
   <meta name="author" content="Chieto Amano">
   <meta property="og:title" content="Chieto Amano — Connecting People in Pattaya">
   <meta property="og:description" content="パタヤで人を繋ぐ男 — Japan-Thailand business connector based in Pattaya.">
@@ -17,25 +20,38 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
+    rel="stylesheet">
 
   <style>
     /* ─── VARIABLES ─── */
     :root {
-      --black:      #000000;
-      --white:      #ffffff;
-      --gold:       #C9A84C;
+      --black: #000000;
+      --white: #ffffff;
+      --gold: #C9A84C;
       --gold-light: #E8D5A3;
-      --text:       #F5F5F5;
-      --text-sub:   #888888;
-      --surface:    #050505;
-      --border:     rgba(255,255,255,0.07);
-      --gold-border: rgba(201,168,76,0.25);
+      --text: #F5F5F5;
+      --text-sub: #888888;
+      --surface: #050505;
+      --border: rgba(255, 255, 255, 0.07);
+      --gold-border: rgba(201, 168, 76, 0.25);
     }
 
     /* ─── RESET ─── */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
     body {
       background: var(--black);
       color: var(--text);
@@ -45,12 +61,18 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-    a { text-decoration: none; color: inherit; }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     /* ─── NAVIGATION ─── */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 1000;
       padding: 28px 56px;
       display: flex;
@@ -59,25 +81,32 @@
       transition: padding 0.4s ease, background 0.4s ease, border-color 0.4s ease;
       border-bottom: 1px solid transparent;
     }
+
     nav.scrolled {
       padding: 16px 56px;
-      background: rgba(0,0,0,0.88);
+      background: rgba(0, 0, 0, 0.88);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom-color: var(--gold-border);
     }
+
     .nav-logo {
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       color: var(--text);
     }
-    .nav-logo span { color: var(--gold); }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
     .nav-links {
       display: flex;
       gap: 40px;
       list-style: none;
     }
+
     .nav-links a {
       font-size: 0.72rem;
       font-weight: 400;
@@ -87,16 +116,26 @@
       transition: color 0.3s ease;
       position: relative;
     }
+
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1px;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
       background: var(--gold);
       transition: width 0.3s ease;
     }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { width: 100%; }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -107,15 +146,27 @@
       z-index: 1001;
       padding: 4px;
     }
+
     .nav-toggle span {
       display: block;
-      width: 22px; height: 1px;
+      width: 22px;
+      height: 1px;
       background: var(--text);
       transition: all 0.35s ease;
     }
-    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
 
     /* ─── HERO ─── */
     #hero {
@@ -127,37 +178,46 @@
       justify-content: center;
       overflow: hidden;
     }
+
     .hero-bg {
       position: absolute;
       inset: 0;
       will-change: transform;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.85) 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.85) 100%),
         url('images/hero-bg.png') center center / cover no-repeat;
     }
+
     .hero-skyline {
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 42%;
       pointer-events: none;
     }
+
     .hero-glow {
       position: absolute;
       top: 38%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 700px; height: 420px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, transparent 65%);
+      width: 700px;
+      height: 420px;
+      background: radial-gradient(ellipse, rgba(201, 168, 76, 0.1) 0%, transparent 65%);
       pointer-events: none;
     }
+
     .hero-glow-2 {
       position: absolute;
       bottom: 20%;
       right: 15%;
-      width: 300px; height: 300px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero-content {
       position: relative;
       z-index: 10;
@@ -165,6 +225,7 @@
       padding: 0 24px;
       max-width: 960px;
     }
+
     .hero-eyebrow {
       font-size: 0.72rem;
       font-weight: 400;
@@ -176,6 +237,7 @@
       transform: translateY(16px);
       animation: fadeUp 0.9s ease 0.3s forwards;
     }
+
     .hero-name {
       font-size: clamp(3.8rem, 9vw, 8rem);
       font-weight: 700;
@@ -186,6 +248,7 @@
       transform: translateY(28px);
       animation: fadeUp 0.9s ease 0.55s forwards;
     }
+
     .hero-japanese {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: clamp(1rem, 2.8vw, 1.6rem);
@@ -197,6 +260,7 @@
       transform: translateY(16px);
       animation: fadeUp 0.9s ease 0.8s forwards;
     }
+
     .hero-rule {
       width: 56px;
       height: 1px;
@@ -205,6 +269,7 @@
       opacity: 0;
       animation: fadeIn 0.8s ease 1.05s forwards;
     }
+
     .hero-tagline {
       font-size: clamp(0.72rem, 1.6vw, 0.88rem);
       font-weight: 300;
@@ -214,6 +279,7 @@
       opacity: 0;
       animation: fadeIn 0.8s ease 1.2s forwards;
     }
+
     .hero-scroll-hint {
       position: absolute;
       bottom: 36px;
@@ -227,12 +293,14 @@
       animation: fadeIn 1s ease 1.8s forwards;
       z-index: 10;
     }
+
     .hero-scroll-hint span {
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(136,136,136,0.7);
+      color: rgba(136, 136, 136, 0.7);
     }
+
     .scroll-bar {
       width: 1px;
       height: 48px;
@@ -241,8 +309,16 @@
     }
 
     /* ─── SHARED ─── */
-    section { padding: 128px 0; }
-    .container { max-width: 1240px; margin: 0 auto; padding: 0 56px; }
+    section {
+      padding: 128px 0;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
+
     .section-eyebrow {
       font-size: 0.68rem;
       font-weight: 400;
@@ -252,6 +328,7 @@
       margin-bottom: 18px;
       display: block;
     }
+
     .section-title {
       font-size: clamp(2.4rem, 5vw, 4.2rem);
       font-weight: 700;
@@ -259,26 +336,37 @@
       line-height: 1.05;
       margin-bottom: 20px;
     }
+
     .section-rule {
-      width: 44px; height: 2px;
+      width: 44px;
+      height: 2px;
       background: var(--gold);
       margin-bottom: 44px;
     }
+
     .fade-in {
       opacity: 0;
       transform: translateY(36px);
       transition: opacity 0.75s ease, transform 0.75s ease;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ─── IDENTITY ─── */
-    #identity { background: var(--black); }
+    #identity {
+      background: var(--black);
+    }
+
     .identity-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 100px;
       align-items: center;
     }
+
     .identity-body p {
       font-size: clamp(0.95rem, 1.6vw, 1.1rem);
       font-weight: 300;
@@ -286,17 +374,24 @@
       color: var(--text-sub);
       margin-bottom: 22px;
     }
-    .identity-body p strong { color: var(--text); font-weight: 400; }
+
+    .identity-body p strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
     .identity-jp {
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 300;
     }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 40px;
     }
+
     .tag {
       display: inline-block;
       padding: 8px 18px;
@@ -309,23 +404,27 @@
       transition: all 0.3s ease;
       cursor: default;
     }
+
     .tag:hover {
       border-color: var(--gold);
-      background: rgba(201,168,76,0.07);
+      background: rgba(201, 168, 76, 0.07);
       color: var(--gold);
     }
+
     .identity-visual {
       position: relative;
       height: 520px;
       overflow: hidden;
     }
+
     .identity-visual-bg {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%),
+        linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%),
         url('images/identity-pattaya.png') center center / cover no-repeat;
     }
+
     .identity-stats {
       position: absolute;
       inset: 0;
@@ -333,8 +432,9 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 44px;
-      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 55%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 55%);
     }
+
     .stat-row {
       display: flex;
       flex-direction: column;
@@ -343,13 +443,20 @@
       border-bottom: 1px solid var(--border);
       margin-bottom: 24px;
     }
-    .stat-row:last-child { padding-bottom: 0; border-bottom: none; margin-bottom: 0; }
+
+    .stat-row:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
     .stat-num {
       font-size: 2.4rem;
       font-weight: 700;
       color: var(--gold);
       line-height: 1;
     }
+
     .stat-label {
       font-size: 0.7rem;
       letter-spacing: 0.15em;
@@ -365,22 +472,29 @@
       font-size: 0.6rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(201,168,76,0.4);
+      color: rgba(201, 168, 76, 0.4);
     }
 
     /* ─── STORY ─── */
-    #story { background: var(--surface); }
+    #story {
+      background: var(--surface);
+    }
+
     .timeline-wrap {
       max-width: 820px;
       margin: 0 auto;
       position: relative;
     }
+
     .timeline-line {
       position: absolute;
-      left: 76px; top: 8px; bottom: 8px;
+      left: 76px;
+      top: 8px;
+      bottom: 8px;
       width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.3) 8%, rgba(201,168,76,0.3) 92%, transparent);
+      background: linear-gradient(to bottom, transparent, rgba(201, 168, 76, 0.3) 8%, rgba(201, 168, 76, 0.3) 92%, transparent);
     }
+
     .tl-item {
       display: grid;
       grid-template-columns: 76px 1fr;
@@ -388,7 +502,11 @@
       padding-bottom: 56px;
       position: relative;
     }
-    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-item:last-child {
+      padding-bottom: 0;
+    }
+
     .tl-year {
       font-size: 0.85rem;
       font-weight: 700;
@@ -399,25 +517,32 @@
       padding-right: 18px;
       line-height: 1.5;
     }
+
     .tl-dot {
       display: none;
       position: absolute;
       left: 72px;
       top: 8px;
-      width: 9px; height: 9px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       border: 1.5px solid var(--gold);
       background: var(--surface);
       transform: translateX(-50%);
     }
+
     .tl-dot::after {
       content: '';
       position: absolute;
       inset: -6px;
       border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.15);
+      border: 1px solid rgba(201, 168, 76, 0.15);
     }
-    .tl-body { padding-left: 4px; }
+
+    .tl-body {
+      padding-left: 4px;
+    }
+
     .tl-title {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 1.05rem;
@@ -426,6 +551,7 @@
       margin-bottom: 8px;
       line-height: 1.5;
     }
+
     .tl-desc {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.9rem;
@@ -435,59 +561,79 @@
     }
 
     /* ─── PROJECTS ─── */
-    #projects { background: var(--black); }
-    .projects-intro { margin-bottom: 64px; }
+    #projects {
+      background: var(--black);
+    }
+
+    .projects-intro {
+      margin-bottom: 64px;
+    }
+
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2px;
     }
+
     .pcard {
       position: relative;
       overflow: hidden;
       aspect-ratio: 4/3;
       cursor: pointer;
     }
+
     .pcard-bg {
       position: absolute;
       inset: 0;
-      transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .pcard:hover .pcard-bg { transform: scale(1.06); }
+
+    .pcard:hover .pcard-bg {
+      transform: scale(1.06);
+    }
+
     .pcard-bg-1 {
       background: url('images/project-kanpai.png') center center / cover no-repeat;
     }
+
     .pcard-bg-2 {
       background: url('images/project-napoli.png') center center / cover no-repeat;
     }
+
     .pcard-bg-3 {
       background: url('images/project-menlabo.png') center center / cover no-repeat;
     }
+
     .pcard-bg-4 {
       background:
-        radial-gradient(ellipse at 35% 50%, rgba(0,90,60,0.2) 0%, transparent 52%),
-        radial-gradient(ellipse at 68% 45%, rgba(201,168,76,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 35% 50%, rgba(0, 90, 60, 0.2) 0%, transparent 52%),
+        radial-gradient(ellipse at 68% 45%, rgba(201, 168, 76, 0.1) 0%, transparent 50%),
         linear-gradient(150deg, #001808 0%, #003018 40%, #004c28 58%, #003018 78%, #001208 100%);
     }
+
     .pcard-grid-svg {
       position: absolute;
       inset: 0;
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       opacity: 0.12;
     }
+
     .pcard-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.35) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.35) 50%, transparent 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding: 36px;
       transition: background 0.45s ease;
     }
+
     .pcard:hover .pcard-overlay {
-      background: linear-gradient(to top, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0.15) 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.15) 100%);
     }
+
     .pcard-num {
       font-size: 0.62rem;
       letter-spacing: 0.35em;
@@ -495,13 +641,15 @@
       color: var(--gold);
       margin-bottom: 8px;
     }
+
     .pcard-title {
-      font-size: clamp(1.1rem,2.5vw,1.4rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
       font-weight: 700;
       letter-spacing: -0.01em;
       line-height: 1.2;
       margin-bottom: 10px;
     }
+
     .pcard-desc {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.85rem;
@@ -512,45 +660,82 @@
       transform: translateY(8px);
       transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
     }
-    .pcard:hover .pcard-desc { opacity: 1; transform: translateY(0); }
+
+    .pcard:hover .pcard-desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ─── NETWORK ─── */
-    #network { background: var(--surface); overflow: hidden; }
+    #network {
+      background: var(--surface);
+      overflow: hidden;
+    }
+
     .network-grid {
       display: grid;
       grid-template-columns: 1fr 1.6fr;
       gap: 80px;
       align-items: center;
     }
+
     .network-text p {
-      font-size: clamp(0.9rem,1.5vw,1rem);
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
       color: var(--text-sub);
       line-height: 1.9;
       margin-bottom: 20px;
     }
-    .network-text .jp { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
+
+    .network-text .jp {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+    }
+
     .network-pillars {
       display: flex;
       flex-direction: column;
       gap: 14px;
       margin-top: 40px;
     }
+
     .pillar {
       display: flex;
       align-items: center;
       gap: 16px;
+      cursor: default;
     }
-    .pillar-line { width: 36px; height: 1px; background: var(--gold); flex-shrink: 0; }
+
+    .pillar-line {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+      transition: width 0.3s ease, box-shadow 0.3s ease;
+    }
+
     .pillar span {
       font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-sub);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
+
+    .pillar:hover .pillar-line {
+      width: 56px;
+      box-shadow: 0 0 8px var(--gold), 0 0 16px rgba(201, 168, 76, 0.4);
+    }
+
+    .pillar:hover span {
+      color: var(--gold-light);
+      text-shadow: 0 0 12px rgba(201, 168, 76, 0.6);
+    }
+
     .network-map-wrap {
       position: relative;
       height: 560px;
     }
+
     .map-image-wrap {
       position: relative;
       width: 100%;
@@ -558,6 +743,7 @@
       min-height: 560px;
       overflow: hidden;
     }
+
     .map-img {
       width: 100%;
       height: 100%;
@@ -566,11 +752,13 @@
       display: block;
       filter: brightness(0.9) contrast(1.05);
     }
+
     .map-overlay {
       position: absolute;
       inset: 0;
       pointer-events: none;
     }
+
     .map-city {
       position: absolute;
       display: flex;
@@ -578,23 +766,44 @@
       align-items: flex-start;
       gap: 2px;
     }
-    .map-city--tokyo  { top: 32%; right: 10%; }
-    .map-city--pattaya { bottom: 22%; left: 30%; }
+
+    .map-city--tokyo {
+      top: 32%;
+      right: 10%;
+    }
+
+    .map-city--pattaya {
+      bottom: 22%;
+      left: 30%;
+    }
+
     .map-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
       border: 1.5px solid var(--gold);
-      background: rgba(201,168,76,0.35);
-      box-shadow: 0 0 10px rgba(201,168,76,0.7);
+      background: rgba(201, 168, 76, 0.35);
+      box-shadow: 0 0 10px rgba(201, 168, 76, 0.7);
       animation: mapPulse 2.4s ease-in-out infinite;
       margin-bottom: 4px;
     }
-    .map-dot--pattaya { animation-delay: 0.6s; }
-    @keyframes mapPulse {
-      0%,100% { box-shadow: 0 0 8px rgba(201,168,76,0.6); }
-      50% { box-shadow: 0 0 16px rgba(201,168,76,1), 0 0 30px rgba(201,168,76,0.4); }
+
+    .map-dot--pattaya {
+      animation-delay: 0.6s;
     }
+
+    @keyframes mapPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px rgba(201, 168, 76, 0.6);
+      }
+
+      50% {
+        box-shadow: 0 0 16px rgba(201, 168, 76, 1), 0 0 30px rgba(201, 168, 76, 0.4);
+      }
+    }
+
     .map-city-name {
       font-size: 9px;
       font-weight: 700;
@@ -602,22 +811,27 @@
       letter-spacing: 0.1em;
       line-height: 1;
     }
+
     .map-city-sub {
       font-size: 7px;
-      color: rgba(201,168,76,0.6);
+      color: rgba(201, 168, 76, 0.6);
       letter-spacing: 0.08em;
       line-height: 1;
     }
 
 
     /* ─── MEDIA ─── */
-    #media { background: var(--black); }
+    #media {
+      background: var(--black);
+    }
+
     .media-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
       margin-top: 64px;
     }
+
     .mcard {
       padding: 52px 28px 44px;
       border: 1px solid var(--border);
@@ -628,13 +842,27 @@
       text-align: center;
       transition: border-color 0.35s ease, background 0.35s ease, transform 0.35s ease;
     }
+
     .mcard:hover {
       border-color: var(--gold-border);
-      background: rgba(201,168,76,0.04);
+      background: rgba(201, 168, 76, 0.04);
       transform: translateY(-5px);
     }
-    .mcard-icon { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
-    .mcard-icon svg { width: 28px; height: 28px; fill: var(--gold); }
+
+    .mcard-icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mcard-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: var(--gold);
+    }
+
     .mcard-name {
       font-size: 0.7rem;
       font-weight: 700;
@@ -642,16 +870,24 @@
       text-transform: uppercase;
       color: var(--text-sub);
     }
-    .mcard-handle { font-size: 0.8rem; color: rgba(136,136,136,0.7); }
+
+    .mcard-handle {
+      font-size: 0.8rem;
+      color: rgba(136, 136, 136, 0.7);
+    }
 
     /* ─── CONTACT ─── */
-    #contact { background: var(--surface); }
+    #contact {
+      background: var(--surface);
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 100px;
       align-items: start;
     }
+
     .contact-intro h2 {
       font-size: clamp(2.2rem, 4.5vw, 3.8rem);
       font-weight: 700;
@@ -659,15 +895,30 @@
       letter-spacing: -0.02em;
       margin-bottom: 20px;
     }
-    .contact-intro h2 em { font-style: normal; color: var(--gold); }
+
+    .contact-intro h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
     .contact-intro p {
       font-size: 0.95rem;
       color: var(--text-sub);
       line-height: 1.85;
       margin-bottom: 14px;
     }
-    .contact-intro .jp { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; }
-    .clist { display: flex; flex-direction: column; gap: 4px; }
+
+    .contact-intro .jp {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+    }
+
+    .clist {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
     .citem {
       display: flex;
       align-items: center;
@@ -676,13 +927,28 @@
       border: 1px solid var(--border);
       transition: border-color 0.3s ease, background 0.3s ease, padding-left 0.3s ease;
     }
+
     .citem:hover {
       border-color: var(--gold-border);
-      background: rgba(201,168,76,0.04);
+      background: rgba(201, 168, 76, 0.04);
       padding-left: 32px;
     }
-    .citem-icon { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .citem-icon svg { width: 18px; height: 18px; fill: var(--gold); }
+
+    .citem-icon {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .citem-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--gold);
+    }
+
     .citem-label {
       font-size: 0.62rem;
       letter-spacing: 0.2em;
@@ -690,668 +956,817 @@
       color: var(--text-sub);
       margin-bottom: 2px;
     }
-    .citem-val { font-size: 0.92rem; color: var(--text); }
+
+    .citem-val {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
 
     /* ─── FOOTER ─── */
+    #network {
+      padding-bottom: 0;
+    }
+
     footer {
-      padding: 40px 56px;
+      padding: 24px 56px;
       border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    footer p { font-size: 0.72rem; color: var(--text-sub); letter-spacing: 0.04em; }
-    .footer-brand { font-size: 0.78rem; font-weight: 700; color: var(--gold); letter-spacing: 0.12em; }
-    .footer-jp { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; font-size: 0.72rem; color: var(--text-sub); letter-spacing: 0.08em; }
+
+    footer p {
+      font-size: 0.72rem;
+      color: var(--text-sub);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-brand {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+    }
+
+    .footer-jp {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      color: var(--text-sub);
+      letter-spacing: 0.08em;
+    }
 
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
     @keyframes scrollAnim {
-      0%   { transform: scaleY(1); opacity: 1; transform-origin: top; }
-      50%  { transform: scaleY(0.5); opacity: 0.3; }
-      100% { transform: scaleY(1); opacity: 1; }
+      0% {
+        transform: scaleY(1);
+        opacity: 1;
+        transform-origin: top;
+      }
+
+      50% {
+        transform: scaleY(0.5);
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
     }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1100px) {
-      .identity-grid { grid-template-columns: 1fr; gap: 60px; }
-      .identity-visual { height: 400px; }
-      .network-grid { grid-template-columns: 1fr; gap: 48px; }
-      .network-map-wrap { height: 440px; }
-      .media-grid { grid-template-columns: repeat(2, 1fr); }
+      .identity-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+
+      .identity-visual {
+        height: 400px;
+      }
+
+      .network-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .network-map-wrap {
+        height: 440px;
+      }
+
+      .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 768px) {
-      nav { padding: 20px 24px; }
-      nav.scrolled { padding: 14px 24px; }
+      nav {
+        padding: 20px 24px;
+      }
+
+      nav.scrolled {
+        padding: 14px 24px;
+      }
+
       .nav-links {
         display: none;
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.97);
+        background: rgba(0, 0, 0, 0.97);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 44px;
         z-index: 999;
       }
-      .nav-links.open { display: flex; }
-      .nav-links a { font-size: 1.1rem; letter-spacing: 0.2em; }
-      .nav-toggle { display: flex; }
-      .container { padding: 0 24px; }
-      section { padding: 88px 0; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; gap: 56px; }
-      .timeline-line { left: 64px; }
-      .tl-item { grid-template-columns: 64px 1fr; column-gap: 36px; }
-      .tl-dot { left: 64px; }
-      footer { flex-direction: column; gap: 14px; text-align: center; padding: 32px 24px; }
-      .media-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+        letter-spacing: 0.2em;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .container {
+        padding: 0 24px;
+      }
+
+      section {
+        padding: 88px 0;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 56px;
+      }
+
+      .timeline-line {
+        left: 64px;
+      }
+
+      .tl-item {
+        grid-template-columns: 64px 1fr;
+        column-gap: 36px;
+      }
+
+      .tl-dot {
+        left: 64px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+        padding: 32px 24px;
+      }
+
+      .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
+
     @media (max-width: 480px) {
-      .media-grid { grid-template-columns: 1fr 1fr; }
-      .network-map-wrap { height: 360px; }
+      .media-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .network-map-wrap {
+        height: 360px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
-<nav id="navbar">
-  <a href="#hero" class="nav-logo">CA<span>.</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#identity">Identity</a></li>
-    <li><a href="#story">Story</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#network">Connection</a></li>
-    <li><a href="#media">Media</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+  <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">CA<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#identity">Identity</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#network">Connection</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
-<section id="hero" aria-label="Hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero-bg" id="heroBg"></div>
 
-  <!-- Pattaya skyline silhouette -->
-  <svg class="hero-skyline" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <defs>
-      <linearGradient id="skylineGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0a0800" stop-opacity="0.85"/>
-        <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
-      </linearGradient>
-    </defs>
-    <path d="M0,180 L60,180 L60,155 L75,155 L75,130 L85,130 L85,110 L95,110 L95,90 L105,90 L105,75 L118,75 L118,55 L128,55 L128,75 L138,75 L138,90 L148,90 L148,110 L158,110 L158,130 L170,130 L170,148 L195,148 L195,130 L210,130 L210,110 L225,110 L225,95 L238,95 L238,78 L252,78 L252,60 L265,60 L265,78 L278,78 L278,95 L290,95 L290,115 L310,115 L310,135 L340,135 L340,118 L360,118 L360,100 L375,100 L375,82 L390,82 L390,60 L404,60 L404,42 L418,42 L418,60 L432,60 L432,82 L446,82 L446,100 L460,100 L460,120 L490,120 L490,140 L520,140 L520,122 L540,122 L540,105 L555,105 L555,88 L572,88 L572,72 L588,72 L588,88 L604,88 L604,105 L618,105 L618,122 L638,122 L638,140 L668,140 L668,122 L690,122 L690,102 L712,102 L712,82 L730,82 L730,60 L748,60 L748,44 L764,44 L764,60 L780,60 L780,82 L798,82 L798,102 L816,102 L816,122 L840,122 L840,140 L880,140 L880,120 L904,120 L904,100 L922,100 L922,80 L940,80 L940,62 L958,62 L958,80 L976,80 L976,100 L994,100 L994,120 L1018,120 L1018,140 L1060,140 L1060,158 L1090,158 L1090,138 L1116,138 L1116,118 L1138,118 L1138,100 L1160,100 L1160,118 L1182,118 L1182,138 L1208,138 L1208,155 L1240,155 L1240,170 L1290,170 L1290,180 L1340,180 L1340,190 L1440,190 L1440,280 L0,280 Z"
-          fill="url(#skylineGrad)"/>
-    <!-- Building lights -->
-    <circle cx="118" cy="52" r="1.5" fill="rgba(201,168,76,0.7)"/>
-    <circle cx="252" cy="57" r="1.5" fill="rgba(201,168,76,0.55)"/>
-    <circle cx="404" cy="39" r="1.5" fill="rgba(201,168,76,0.8)"/>
-    <circle cx="418" cy="39" r="1.5" fill="rgba(201,168,76,0.6)"/>
-    <circle cx="588" cy="69" r="1.5" fill="rgba(201,168,76,0.5)"/>
-    <circle cx="748" cy="57" r="1.5" fill="rgba(201,168,76,0.75)"/>
-    <circle cx="764" cy="41" r="1.5" fill="rgba(201,168,76,0.65)"/>
-    <circle cx="940" cy="59" r="1.5" fill="rgba(201,168,76,0.6)"/>
-    <circle cx="958" cy="59" r="1.5" fill="rgba(201,168,76,0.45)"/>
-  </svg>
+    <!-- Pattaya skyline silhouette -->
+    <svg class="hero-skyline" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax meet"
+      xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="skylineGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a0800" stop-opacity="0.85" />
+          <stop offset="100%" stop-color="#000000" stop-opacity="1" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M0,180 L60,180 L60,155 L75,155 L75,130 L85,130 L85,110 L95,110 L95,90 L105,90 L105,75 L118,75 L118,55 L128,55 L128,75 L138,75 L138,90 L148,90 L148,110 L158,110 L158,130 L170,130 L170,148 L195,148 L195,130 L210,130 L210,110 L225,110 L225,95 L238,95 L238,78 L252,78 L252,60 L265,60 L265,78 L278,78 L278,95 L290,95 L290,115 L310,115 L310,135 L340,135 L340,118 L360,118 L360,100 L375,100 L375,82 L390,82 L390,60 L404,60 L404,42 L418,42 L418,60 L432,60 L432,82 L446,82 L446,100 L460,100 L460,120 L490,120 L490,140 L520,140 L520,122 L540,122 L540,105 L555,105 L555,88 L572,88 L572,72 L588,72 L588,88 L604,88 L604,105 L618,105 L618,122 L638,122 L638,140 L668,140 L668,122 L690,122 L690,102 L712,102 L712,82 L730,82 L730,60 L748,60 L748,44 L764,44 L764,60 L780,60 L780,82 L798,82 L798,102 L816,102 L816,122 L840,122 L840,140 L880,140 L880,120 L904,120 L904,100 L922,100 L922,80 L940,80 L940,62 L958,62 L958,80 L976,80 L976,100 L994,100 L994,120 L1018,120 L1018,140 L1060,140 L1060,158 L1090,158 L1090,138 L1116,138 L1116,118 L1138,118 L1138,100 L1160,100 L1160,118 L1182,118 L1182,138 L1208,138 L1208,155 L1240,155 L1240,170 L1290,170 L1290,180 L1340,180 L1340,190 L1440,190 L1440,280 L0,280 Z"
+        fill="url(#skylineGrad)" />
+      <!-- Building lights -->
+      <circle cx="118" cy="52" r="1.5" fill="rgba(201,168,76,0.7)" />
+      <circle cx="252" cy="57" r="1.5" fill="rgba(201,168,76,0.55)" />
+      <circle cx="404" cy="39" r="1.5" fill="rgba(201,168,76,0.8)" />
+      <circle cx="418" cy="39" r="1.5" fill="rgba(201,168,76,0.6)" />
+      <circle cx="588" cy="69" r="1.5" fill="rgba(201,168,76,0.5)" />
+      <circle cx="748" cy="57" r="1.5" fill="rgba(201,168,76,0.75)" />
+      <circle cx="764" cy="41" r="1.5" fill="rgba(201,168,76,0.65)" />
+      <circle cx="940" cy="59" r="1.5" fill="rgba(201,168,76,0.6)" />
+      <circle cx="958" cy="59" r="1.5" fill="rgba(201,168,76,0.45)" />
+    </svg>
 
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="hero-glow-2" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-glow-2" aria-hidden="true"></div>
 
-  <div class="hero-content">
-    <p class="hero-eyebrow">Pattaya, Thailand</p>
-    <h1 class="hero-name">Chieto Amano</h1>
-    <p class="hero-japanese">パタヤで人を繋ぐ男</p>
-    <div class="hero-rule" aria-hidden="true"></div>
-    <p class="hero-tagline">Entrepreneur &nbsp;&mdash;&nbsp; Connector &nbsp;&mdash;&nbsp; Pattaya</p>
-  </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Pattaya, Thailand</p>
+      <h1 class="hero-name">Chieto Amano</h1>
+      <p class="hero-japanese">パタヤで人を繋ぐ男</p>
+      <div class="hero-rule" aria-hidden="true"></div>
+      <p class="hero-tagline">Entrepreneur &nbsp;&mdash;&nbsp; Connector &nbsp;&mdash;&nbsp; Pattaya</p>
+    </div>
 
-  <div class="hero-scroll-hint" aria-hidden="true">
-    <span>Scroll</span>
-    <div class="scroll-bar"></div>
-  </div>
-</section>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
 
 
-<!-- ═══════════════════════════ IDENTITY ═══════════════════════════ -->
-<section id="identity" aria-labelledby="identity-heading">
-  <div class="container">
-    <div class="identity-grid">
+  <!-- ═══════════════════════════ IDENTITY ═══════════════════════════ -->
+  <section id="identity" aria-labelledby="identity-heading">
+    <div class="container">
+      <div class="identity-grid">
 
-      <div class="identity-body fade-in">
-        <span class="section-eyebrow">Identity</span>
-        <h2 class="section-title" id="identity-heading">Japan meets<br>Thailand.</h2>
+        <div class="identity-body fade-in">
+          <span class="section-eyebrow">Identity</span>
+          <h2 class="section-title" id="identity-heading">Japan meets<br>Thailand.</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+          <p class="identity-jp">天野智人は、日本とタイを繋ぐビジネスコネクター。パタヤを拠点に、人と人、企業と企業の橋渡しをしている。</p>
+          <p>A <strong>Japan–Thailand business connector</strong> based in Pattaya — bridging cultures, building
+            opportunities, and creating lasting networks across borders.</p>
+          <p class="identity-jp">リユースビジネス、飲食業、進出支援という<strong>3本柱</strong>で、パタヤのビジネスエコシステムを日々構築している。</p>
+          <div class="tags">
+            <span class="tag">Entrepreneur</span>
+            <span class="tag">Connector</span>
+            <span class="tag">Pattaya</span>
+            <span class="tag">Japan × Thailand</span>
+            <span class="tag">K2 Pattaya</span>
+          </div>
+        </div>
+
+        <div class="identity-visual fade-in" style="transition-delay:0.18s;" aria-hidden="true">
+          <div class="identity-visual-bg"></div>
+          <!-- SVG decorative element -->
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 480 520"
+            preserveAspectRatio="xMidYMid slice">
+            <line x1="0" y1="130" x2="480" y2="130" stroke="#C9A84C" stroke-width="0.5" />
+            <line x1="0" y1="260" x2="480" y2="260" stroke="#C9A84C" stroke-width="0.5" />
+            <line x1="0" y1="390" x2="480" y2="390" stroke="#C9A84C" stroke-width="0.5" />
+            <line x1="120" y1="0" x2="120" y2="520" stroke="#C9A84C" stroke-width="0.5" />
+            <line x1="240" y1="0" x2="240" y2="520" stroke="#C9A84C" stroke-width="0.5" />
+            <line x1="360" y1="0" x2="360" y2="520" stroke="#C9A84C" stroke-width="0.5" />
+            <circle cx="240" cy="240" r="80" stroke="#C9A84C" stroke-width="0.8" fill="none" />
+            <circle cx="240" cy="240" r="140" stroke="#C9A84C" stroke-width="0.4" fill="none" />
+          </svg>
+          <span class="identity-photo-label">Pattaya Bay — Thailand</span>
+          <div class="identity-stats">
+            <div class="stat-row">
+              <span class="stat-num">2007</span>
+              <span class="stat-label">First Company Founded</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Active Business Verticals</span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-num">JP × TH</span>
+              <span class="stat-label">Cross-Border Connection</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════ STORY ═══════════════════════════ -->
+  <section id="story" aria-labelledby="story-heading">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-eyebrow">Story</span>
+        <h2 class="section-title" id="story-heading">The journey.</h2>
         <div class="section-rule" aria-hidden="true"></div>
-        <p class="identity-jp">天野智人は、日本とタイを繋ぐビジネスコネクター。パタヤを拠点に、人と人、企業と企業の橋渡しをしている。</p>
-        <p>A <strong>Japan–Thailand business connector</strong> based in Pattaya — bridging cultures, building opportunities, and creating lasting networks across borders.</p>
-        <p class="identity-jp">リユースビジネス、飲食業、進出支援という<strong>3本柱</strong>で、パタヤのビジネスエコシステムを日々構築している。</p>
-        <div class="tags">
-          <span class="tag">Entrepreneur</span>
-          <span class="tag">Connector</span>
-          <span class="tag">Pattaya</span>
-          <span class="tag">Japan × Thailand</span>
-          <span class="tag">K2 Pattaya</span>
-        </div>
       </div>
 
-      <div class="identity-visual fade-in" style="transition-delay:0.18s;" aria-hidden="true">
-        <div class="identity-visual-bg"></div>
-        <!-- SVG decorative element -->
-        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 480 520" preserveAspectRatio="xMidYMid slice">
-          <line x1="0" y1="130" x2="480" y2="130" stroke="#C9A84C" stroke-width="0.5"/>
-          <line x1="0" y1="260" x2="480" y2="260" stroke="#C9A84C" stroke-width="0.5"/>
-          <line x1="0" y1="390" x2="480" y2="390" stroke="#C9A84C" stroke-width="0.5"/>
-          <line x1="120" y1="0" x2="120" y2="520" stroke="#C9A84C" stroke-width="0.5"/>
-          <line x1="240" y1="0" x2="240" y2="520" stroke="#C9A84C" stroke-width="0.5"/>
-          <line x1="360" y1="0" x2="360" y2="520" stroke="#C9A84C" stroke-width="0.5"/>
-          <circle cx="240" cy="240" r="80" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
-          <circle cx="240" cy="240" r="140" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
-        </svg>
-        <span class="identity-photo-label">Pattaya Bay — Thailand</span>
-        <div class="identity-stats">
-          <div class="stat-row">
-            <span class="stat-num">2007</span>
-            <span class="stat-label">First Company Founded</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-num">3</span>
-            <span class="stat-label">Active Business Verticals</span>
-          </div>
-          <div class="stat-row">
-            <span class="stat-num">JP × TH</span>
-            <span class="stat-label">Cross-Border Connection</span>
+      <div class="timeline-wrap" style="margin-top:64px;">
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <div class="tl-item fade-in" style="transition-delay:0.05s;">
+          <div class="tl-year">2007</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">株式会社C・S・R 設立</h3>
+            <p class="tl-desc">26歳で独立。東京・池袋を拠点に経営を開始。自らの力でビジネスの世界に踏み出した最初の一歩。</p>
           </div>
         </div>
-      </div>
 
+        <div class="tl-item fade-in" style="transition-delay:0.12s;">
+          <div class="tl-year">2014</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">株式会社feemo 設立</h3>
+            <p class="tl-desc">C・S・Rを譲渡後、新会社で広告・マーケティング事業を展開。デジタルの波を掴み、新たなフェーズへ。</p>
+          </div>
+        </div>
+
+        <div class="tl-item fade-in" style="transition-delay:0.19s;">
+          <div class="tl-year">2016</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">マレーシアへ移住</h3>
+            <p class="tl-desc">東南アジアを拠点にグローバル展開を開始。国境を越え、より広いビジネスの視野へ。</p>
+          </div>
+        </div>
+
+        <div class="tl-item fade-in" style="transition-delay:0.26s;">
+          <div class="tl-year">2017</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">フィリピン法人設立</h3>
+            <p class="tl-desc">映像制作・開発のオフショア拠点を構築。アジア全域にネットワークを着実に広げていく。</p>
+          </div>
+        </div>
+
+        <div class="tl-item fade-in" style="transition-delay:0.33s;">
+          <div class="tl-year">2020</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">コロナ禍でタイへ</h3>
+            <p class="tl-desc">フィリピンのロックダウンを受け緊急脱出。パタヤへ移り住み、新たな人生の拠点を見つける。</p>
+          </div>
+        </div>
+
+        <div class="tl-item fade-in" style="transition-delay:0.4s;">
+          <div class="tl-year">2021〜</div>
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-body">
+            <h3 class="tl-title">パタヤで本格事業開始</h3>
+            <p class="tl-desc">K2 PATTAYA を中核に、リユース・飲食・進出支援の3本柱で展開中。パタヤで人を繋ぐ男として、コミュニティを育て続けている。</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ═══════════════════════════ STORY ═══════════════════════════ -->
-<section id="story" aria-labelledby="story-heading">
-  <div class="container">
-    <div class="fade-in">
-      <span class="section-eyebrow">Story</span>
-      <h2 class="section-title" id="story-heading">The journey.</h2>
-      <div class="section-rule" aria-hidden="true"></div>
-    </div>
-
-    <div class="timeline-wrap" style="margin-top:64px;">
-      <div class="timeline-line" aria-hidden="true"></div>
-
-      <div class="tl-item fade-in" style="transition-delay:0.05s;">
-        <div class="tl-year">2007</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-body">
-          <h3 class="tl-title">株式会社C・S・R 設立</h3>
-          <p class="tl-desc">26歳で独立。東京・池袋を拠点に経営を開始。自らの力でビジネスの世界に踏み出した最初の一歩。</p>
-        </div>
-      </div>
-
-      <div class="tl-item fade-in" style="transition-delay:0.12s;">
-        <div class="tl-year">2014</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-body">
-          <h3 class="tl-title">株式会社feemo 設立</h3>
-          <p class="tl-desc">C・S・Rを譲渡後、新会社で広告・マーケティング事業を展開。デジタルの波を掴み、新たなフェーズへ。</p>
-        </div>
-      </div>
-
-      <div class="tl-item fade-in" style="transition-delay:0.19s;">
-        <div class="tl-year">2016</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-body">
-          <h3 class="tl-title">マレーシアへ移住</h3>
-          <p class="tl-desc">東南アジアを拠点にグローバル展開を開始。国境を越え、より広いビジネスの視野へ。</p>
-        </div>
-      </div>
-
-      <div class="tl-item fade-in" style="transition-delay:0.26s;">
-        <div class="tl-year">2017</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-body">
-          <h3 class="tl-title">フィリピン法人設立</h3>
-          <p class="tl-desc">映像制作・開発のオフショア拠点を構築。アジア全域にネットワークを着実に広げていく。</p>
-        </div>
-      </div>
-
-      <div class="tl-item fade-in" style="transition-delay:0.33s;">
-        <div class="tl-year">2020</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-body">
-          <h3 class="tl-title">コロナ禍でタイへ</h3>
-          <p class="tl-desc">フィリピンのロックダウンを受け緊急脱出。パタヤへ移り住み、新たな人生の拠点を見つける。</p>
-        </div>
-      </div>
-
-      <div class="tl-item fade-in" style="transition-delay:0.4s;">
-        <div class="tl-year">2021〜</div>
-        <div class="tl-dot" aria-hidden="true"></div>
-        <div class="tl-body">
-          <h3 class="tl-title">パタヤで本格事業開始</h3>
-          <p class="tl-desc">K2 PATTAYA を中核に、リユース・飲食・進出支援の3本柱で展開中。パタヤで人を繋ぐ男として、コミュニティを育て続けている。</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
-<section id="projects" aria-labelledby="projects-heading">
-  <div class="container projects-intro">
-    <div class="fade-in">
-      <span class="section-eyebrow">Projects</span>
-      <h2 class="section-title" id="projects-heading">Current<br>ventures.</h2>
-      <div class="section-rule" aria-hidden="true"></div>
-    </div>
-  </div>
-
-  <div class="projects-grid fade-in" style="transition-delay:0.15s;">
-
-    <article class="pcard">
-      <div class="pcard-bg pcard-bg-1" aria-hidden="true">
-        <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-          <line x1="0" y1="75" x2="400" y2="75" stroke="#C9A84C" stroke-width="0.6"/>
-          <line x1="0" y1="150" x2="400" y2="150" stroke="#C9A84C" stroke-width="0.6"/>
-          <line x1="0" y1="225" x2="400" y2="225" stroke="#C9A84C" stroke-width="0.6"/>
-          <line x1="80" y1="0" x2="80" y2="300" stroke="#C9A84C" stroke-width="0.6"/>
-          <line x1="160" y1="0" x2="160" y2="300" stroke="#C9A84C" stroke-width="0.6"/>
-          <line x1="240" y1="0" x2="240" y2="300" stroke="#C9A84C" stroke-width="0.6"/>
-          <line x1="320" y1="0" x2="320" y2="300" stroke="#C9A84C" stroke-width="0.6"/>
-          <!-- Shelving icon -->
-          <rect x="140" y="80" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1"/>
-          <rect x="140" y="140" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1"/>
-          <rect x="140" y="200" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1"/>
-          <rect x="148" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1"/>
-          <rect x="170" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1"/>
-          <rect x="192" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1"/>
-          <rect x="214" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1"/>
-          <rect x="236" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1"/>
-        </svg>
-      </div>
-      <div class="pcard-overlay">
-        <span class="pcard-num">01</span>
-        <h3 class="pcard-title">Kanpai Reuse Pattaya</h3>
-        <p class="pcard-desc">日本から仕入れた良質な中古品を、パタヤで販売するリユースショップ</p>
-      </div>
-    </article>
-
-    <article class="pcard">
-      <div class="pcard-bg pcard-bg-2" aria-hidden="true">
-        <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-          <!-- Pizza circle decoration -->
-          <circle cx="200" cy="150" r="110" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
-          <circle cx="200" cy="150" r="85" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
-          <circle cx="200" cy="150" r="55" stroke="#C9A84C" stroke-width="0.4" fill="none" stroke-dasharray="4,4"/>
-          <line x1="200" y1="40" x2="200" y2="260" stroke="#C9A84C" stroke-width="0.4"/>
-          <line x1="90" y1="150" x2="310" y2="150" stroke="#C9A84C" stroke-width="0.4"/>
-          <line x1="122" y1="78" x2="278" y2="222" stroke="#C9A84C" stroke-width="0.4"/>
-          <line x1="278" y1="78" x2="122" y2="222" stroke="#C9A84C" stroke-width="0.4"/>
-        </svg>
-      </div>
-      <div class="pcard-overlay">
-        <span class="pcard-num">02</span>
-        <h3 class="pcard-title">Napoli no Kama Thailand</h3>
-        <p class="pcard-desc">日本品質の宅配ピザブランドのタイ展開</p>
-      </div>
-    </article>
-
-    <article class="pcard">
-      <div class="pcard-bg pcard-bg-3" aria-hidden="true">
-        <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-          <!-- Ramen bowl -->
-          <ellipse cx="200" cy="180" rx="130" ry="65" stroke="#C9A84C" stroke-width="0.9" fill="none"/>
-          <ellipse cx="200" cy="168" rx="130" ry="58" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
-          <path d="M 70 168 Q 200 220 330 168" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
-          <!-- Chopsticks -->
-          <line x1="168" y1="50" x2="180" y2="135" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
-          <line x1="180" y1="50" x2="195" y2="135" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
-          <!-- Steam -->
-          <path d="M 175 80 Q 182 68 175 58" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-          <path d="M 195 75 Q 202 62 195 52" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-          <path d="M 215 80 Q 222 67 215 57" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6"/>
-        </svg>
-      </div>
-      <div class="pcard-overlay">
-        <span class="pcard-num">03</span>
-        <h3 class="pcard-title">MENLABO</h3>
-        <p class="pcard-desc">ラーメン・居酒屋スタイルの飲食店</p>
-      </div>
-    </article>
-
-    <article class="pcard">
-      <div class="pcard-bg pcard-bg-4" aria-hidden="true">
-        <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-          <!-- Network graph -->
-          <circle cx="120" cy="150" r="7" fill="rgba(201,168,76,0.6)"/>
-          <circle cx="280" cy="150" r="7" fill="rgba(201,168,76,0.6)"/>
-          <circle cx="200" cy="90"  r="5" fill="rgba(201,168,76,0.4)"/>
-          <circle cx="200" cy="210" r="5" fill="rgba(201,168,76,0.4)"/>
-          <circle cx="148" cy="100" r="3.5" fill="rgba(201,168,76,0.3)"/>
-          <circle cx="252" cy="100" r="3.5" fill="rgba(201,168,76,0.3)"/>
-          <circle cx="148" cy="200" r="3.5" fill="rgba(201,168,76,0.3)"/>
-          <circle cx="252" cy="200" r="3.5" fill="rgba(201,168,76,0.3)"/>
-          <line x1="120" y1="150" x2="280" y2="150" stroke="#C9A84C" stroke-width="0.7" stroke-dasharray="5,4"/>
-          <line x1="120" y1="150" x2="200" y2="90"  stroke="#C9A84C" stroke-width="0.7"/>
-          <line x1="120" y1="150" x2="200" y2="210" stroke="#C9A84C" stroke-width="0.7"/>
-          <line x1="280" y1="150" x2="200" y2="90"  stroke="#C9A84C" stroke-width="0.7"/>
-          <line x1="280" y1="150" x2="200" y2="210" stroke="#C9A84C" stroke-width="0.7"/>
-          <line x1="200" y1="90"  x2="148" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
-          <line x1="200" y1="90"  x2="252" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
-          <line x1="200" y1="210" x2="148" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
-          <line x1="200" y1="210" x2="252" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.6"/>
-        </svg>
-      </div>
-      <div class="pcard-overlay">
-        <span class="pcard-num">04</span>
-        <h3 class="pcard-title">Business Network</h3>
-        <p class="pcard-desc">日本とタイのビジネスを繋ぐコネクター活動</p>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════ PATTAYA NETWORK ═══════════════════════════ -->
-<section id="network" aria-labelledby="network-heading">
-  <div class="container">
-    <div class="network-grid">
-
-      <div class="network-text fade-in">
-        <span class="section-eyebrow">Connection</span>
-        <h2 class="section-title" id="network-heading">Bridging<br>two worlds.</h2>
+  <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="container projects-intro">
+      <div class="fade-in">
+        <span class="section-eyebrow">Projects</span>
+        <h2 class="section-title" id="projects-heading">Current<br>ventures.</h2>
         <div class="section-rule" aria-hidden="true"></div>
-        <p class="jp">日本とタイの間に橋を架け、ビジネスや文化、人をつなぎながら、パタヤを中心に新しいつながりを広げています。</p>
-        <p>Connecting businesses, cultures, and people across 4,600 km.</p>
-        <div class="network-pillars">
-          <div class="pillar">
-            <div class="pillar-line" aria-hidden="true"></div>
-            <span>Japan → Thailand Business Expansion</span>
-          </div>
-          <div class="pillar">
-            <div class="pillar-line" aria-hidden="true"></div>
-            <span>Reuse &amp; Retail Distribution</span>
-          </div>
-          <div class="pillar">
-            <div class="pillar-line" aria-hidden="true"></div>
-            <span>People &amp; Business Networks</span>
-          </div>
-          <div class="pillar">
-            <div class="pillar-line" aria-hidden="true"></div>
-            <span>Pattaya Community Building</span>
-          </div>
-        </div>
       </div>
-
-      <!-- Animated Map -->
-      <div class="network-map-wrap fade-in" id="networkMap" style="transition-delay:0.25s;" aria-label="Map showing connection between Japan and Thailand">
-        <div class="map-image-wrap">
-          <img src="images/map.jpeg" alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand" class="map-img"/>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-<!-- ═══════════════════════════ MEDIA ═══════════════════════════ -->
-<section id="media" aria-labelledby="media-heading">
-  <div class="container">
-    <div class="fade-in">
-      <span class="section-eyebrow">Media</span>
-      <h2 class="section-title" id="media-heading">Follow<br>the journey.</h2>
-      <div class="section-rule" aria-hidden="true"></div>
     </div>
 
-    <div class="media-grid fade-in" style="transition-delay:0.15s;">
+    <div class="projects-grid fade-in" style="transition-delay:0.15s;">
 
-      <a href="https://note.com/chieto_amano" target="_blank" rel="noopener noreferrer" class="mcard">
-        <div class="mcard-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.4 2H5.6C3.6 2 2 3.6 2 5.6v12.8C2 20.4 3.6 22 5.6 22h12.8c2 0 3.6-1.6 3.6-3.6V5.6C22 3.6 20.4 2 18.4 2zm-1.8 14H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8z"/>
+      <article class="pcard">
+        <div class="pcard-bg pcard-bg-1" aria-hidden="true">
+          <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <line x1="0" y1="75" x2="400" y2="75" stroke="#C9A84C" stroke-width="0.6" />
+            <line x1="0" y1="150" x2="400" y2="150" stroke="#C9A84C" stroke-width="0.6" />
+            <line x1="0" y1="225" x2="400" y2="225" stroke="#C9A84C" stroke-width="0.6" />
+            <line x1="80" y1="0" x2="80" y2="300" stroke="#C9A84C" stroke-width="0.6" />
+            <line x1="160" y1="0" x2="160" y2="300" stroke="#C9A84C" stroke-width="0.6" />
+            <line x1="240" y1="0" x2="240" y2="300" stroke="#C9A84C" stroke-width="0.6" />
+            <line x1="320" y1="0" x2="320" y2="300" stroke="#C9A84C" stroke-width="0.6" />
+            <!-- Shelving icon -->
+            <rect x="140" y="80" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1" />
+            <rect x="140" y="140" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1" />
+            <rect x="140" y="200" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1" />
+            <rect x="148" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1" />
+            <rect x="170" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1" />
+            <rect x="192" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1" />
+            <rect x="214" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1" />
+            <rect x="236" y="88" width="14" height="52" fill="rgba(201,168,76,0.12)" rx="1" />
           </svg>
         </div>
-        <span class="mcard-name">note</span>
-        <span class="mcard-handle">記事・コラム</span>
-      </a>
+        <div class="pcard-overlay">
+          <span class="pcard-num">01</span>
+          <h3 class="pcard-title">Kanpai Reuse Pattaya</h3>
+          <p class="pcard-desc">日本から仕入れた良質な中古品を、パタヤで販売するリユースショップ</p>
+        </div>
+      </article>
 
-      <a href="https://x.com/amano_napoli" target="_blank" rel="noopener noreferrer" class="mcard">
-        <div class="mcard-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      <article class="pcard">
+        <div class="pcard-bg pcard-bg-2" aria-hidden="true">
+          <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <!-- Pizza circle decoration -->
+            <circle cx="200" cy="150" r="110" stroke="#C9A84C" stroke-width="0.8" fill="none" />
+            <circle cx="200" cy="150" r="85" stroke="#C9A84C" stroke-width="0.5" fill="none" />
+            <circle cx="200" cy="150" r="55" stroke="#C9A84C" stroke-width="0.4" fill="none" stroke-dasharray="4,4" />
+            <line x1="200" y1="40" x2="200" y2="260" stroke="#C9A84C" stroke-width="0.4" />
+            <line x1="90" y1="150" x2="310" y2="150" stroke="#C9A84C" stroke-width="0.4" />
+            <line x1="122" y1="78" x2="278" y2="222" stroke="#C9A84C" stroke-width="0.4" />
+            <line x1="278" y1="78" x2="122" y2="222" stroke="#C9A84C" stroke-width="0.4" />
           </svg>
         </div>
-        <span class="mcard-name">X</span>
-        <span class="mcard-handle">@amano_napoli</span>
-      </a>
+        <div class="pcard-overlay">
+          <span class="pcard-num">02</span>
+          <h3 class="pcard-title">Napoli no Kama Thailand</h3>
+          <p class="pcard-desc">日本品質の宅配ピザブランドのタイ展開</p>
+        </div>
+      </article>
 
-      <a href="https://www.instagram.com/chieto_jp/" target="_blank" rel="noopener noreferrer" class="mcard">
-        <div class="mcard-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      <article class="pcard">
+        <div class="pcard-bg pcard-bg-3" aria-hidden="true">
+          <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <!-- Ramen bowl -->
+            <ellipse cx="200" cy="180" rx="130" ry="65" stroke="#C9A84C" stroke-width="0.9" fill="none" />
+            <ellipse cx="200" cy="168" rx="130" ry="58" stroke="#C9A84C" stroke-width="0.5" fill="none" />
+            <path d="M 70 168 Q 200 220 330 168" stroke="#C9A84C" stroke-width="0.4" fill="none" />
+            <!-- Chopsticks -->
+            <line x1="168" y1="50" x2="180" y2="135" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" />
+            <line x1="180" y1="50" x2="195" y2="135" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" />
+            <!-- Steam -->
+            <path d="M 175 80 Q 182 68 175 58" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6" />
+            <path d="M 195 75 Q 202 62 195 52" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6" />
+            <path d="M 215 80 Q 222 67 215 57" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6" />
           </svg>
         </div>
-        <span class="mcard-name">Instagram</span>
-        <span class="mcard-handle">@chieto_jp</span>
-      </a>
+        <div class="pcard-overlay">
+          <span class="pcard-num">03</span>
+          <h3 class="pcard-title">MENLABO</h3>
+          <p class="pcard-desc">ラーメン・居酒屋スタイルの飲食店</p>
+        </div>
+      </article>
+
+      <article class="pcard">
+        <div class="pcard-bg pcard-bg-4" aria-hidden="true">
+          <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+            <!-- Network graph -->
+            <circle cx="120" cy="150" r="7" fill="rgba(201,168,76,0.6)" />
+            <circle cx="280" cy="150" r="7" fill="rgba(201,168,76,0.6)" />
+            <circle cx="200" cy="90" r="5" fill="rgba(201,168,76,0.4)" />
+            <circle cx="200" cy="210" r="5" fill="rgba(201,168,76,0.4)" />
+            <circle cx="148" cy="100" r="3.5" fill="rgba(201,168,76,0.3)" />
+            <circle cx="252" cy="100" r="3.5" fill="rgba(201,168,76,0.3)" />
+            <circle cx="148" cy="200" r="3.5" fill="rgba(201,168,76,0.3)" />
+            <circle cx="252" cy="200" r="3.5" fill="rgba(201,168,76,0.3)" />
+            <line x1="120" y1="150" x2="280" y2="150" stroke="#C9A84C" stroke-width="0.7" stroke-dasharray="5,4" />
+            <line x1="120" y1="150" x2="200" y2="90" stroke="#C9A84C" stroke-width="0.7" />
+            <line x1="120" y1="150" x2="200" y2="210" stroke="#C9A84C" stroke-width="0.7" />
+            <line x1="280" y1="150" x2="200" y2="90" stroke="#C9A84C" stroke-width="0.7" />
+            <line x1="280" y1="150" x2="200" y2="210" stroke="#C9A84C" stroke-width="0.7" />
+            <line x1="200" y1="90" x2="148" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
+            <line x1="200" y1="90" x2="252" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
+            <line x1="200" y1="210" x2="148" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
+            <line x1="200" y1="210" x2="252" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
+          </svg>
+        </div>
+        <div class="pcard-overlay">
+          <span class="pcard-num">04</span>
+          <h3 class="pcard-title">Business Network</h3>
+          <p class="pcard-desc">日本とタイのビジネスを繋ぐコネクター活動</p>
+        </div>
+      </article>
 
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
-<section id="contact" aria-labelledby="contact-heading">
-  <div class="container">
-    <div class="contact-grid">
+  <!-- ═══════════════════════════ PATTAYA NETWORK ═══════════════════════════ -->
+  <section id="network" aria-labelledby="network-heading">
+    <div class="container">
+      <div class="network-grid">
 
-      <div class="contact-intro fade-in">
-        <span class="section-eyebrow">Contact</span>
-        <h2 id="contact-heading">Let's<br><em>connect.</em></h2>
-        <div class="section-rule" style="margin-top:20px;" aria-hidden="true"></div>
-        <p class="jp">パタヤでのビジネスや、日本とタイをつなぐご相談など、お気軽にご連絡ください。</p>
-        <p>Feel free to reach out for business in Pattaya or connections between Japan and Thailand.</p>
-      </div>
+        <div class="network-text fade-in">
+          <span class="section-eyebrow">Connection</span>
+          <h2 class="section-title" id="network-heading">Bridging<br>two worlds.</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+          <p class="jp">日本とタイの間に橋を架け、ビジネスや文化、人をつなぎながら、パタヤを中心に新しいつながりを広げています。</p>
+          <p>Connecting businesses, cultures, and people across 4,600 km.</p>
+          <div class="network-pillars">
+            <div class="pillar">
+              <div class="pillar-line" aria-hidden="true"></div>
+              <span>Japan → Thailand Business Expansion</span>
+            </div>
+            <div class="pillar">
+              <div class="pillar-line" aria-hidden="true"></div>
+              <span>Reuse &amp; Retail Distribution</span>
+            </div>
+            <div class="pillar">
+              <div class="pillar-line" aria-hidden="true"></div>
+              <span>People &amp; Business Networks</span>
+            </div>
+            <div class="pillar">
+              <div class="pillar-line" aria-hidden="true"></div>
+              <span>Pattaya Community Building</span>
+            </div>
+          </div>
+        </div>
 
-      <div class="clist fade-in" style="transition-delay:0.18s;">
+        <!-- Animated Map -->
+        <div class="network-map-wrap fade-in" id="networkMap" style="transition-delay:0.25s;"
+          aria-label="Map showing connection between Japan and Thailand">
+          <div class="map-image-wrap">
+            <img src="images/map.jpeg" alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand"
+              class="map-img" />
+          </div>
+        </div>
 
-        
-        <a href="https://line.me/ti/p/Vgn1_ZlgXN" target="_blank" rel="noopener noreferrer" class="citem">
-          <div class="citem-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          </div>
-          <div>
-            <div class="citem-label">LINE</div>
-            <div class="citem-val">LINEで相談</div>
-          </div>
-        </a>
-        
-        <a href="https://facebook.com/chieto.amano" target="_blank" rel="noopener noreferrer" class="citem">
-          <div class="citem-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </div>
-          <div>
-            <div class="citem-label">Facebook</div>
-            <div class="citem-val">chieto.amano</div>
-          </div>
-        </a>
-        
-        <a href="tel:+66957018104" class="citem">
-          <div class="citem-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          </div>
-          <div>
-            <div class="citem-label">Phone</div>
-            <div class="citem-val">095-701-8104</div>
-          </div>
-        </a>
-        
-        <a href="mailto:amano@k2pattaya.co.th" class="citem">
-          <div class="citem-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          </div>
-          <div>
-            <div class="citem-label">Email</div>
-            <div class="citem-val">amano@k2pattaya.co.th</div>
-          </div>
-        </a>
       </div>
     </div>
-  </div>
-</section>
 
 
-<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-<footer>
-  <span class="footer-brand">K2 PATTAYA</span>
-  <p>© 2026 Chieto Amano — Pattaya, Thailand</p>
-  <span class="footer-jp">パタヤで人を繋ぐ男</span>
-</footer>
+    <!-- ═══════════════════════════ MEDIA ═══════════════════════════ -->
+    <section id="media" aria-labelledby="media-heading">
+      <div class="container">
+        <div class="fade-in">
+          <span class="section-eyebrow">Media</span>
+          <h2 class="section-title" id="media-heading">Follow<br>the journey.</h2>
+          <div class="section-rule" aria-hidden="true"></div>
+        </div>
+
+        <div class="media-grid fade-in" style="transition-delay:0.15s;">
+
+          <a href="https://note.com/chieto_amano" target="_blank" rel="noopener noreferrer" class="mcard">
+            <div class="mcard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.4 2H5.6C3.6 2 2 3.6 2 5.6v12.8C2 20.4 3.6 22 5.6 22h12.8c2 0 3.6-1.6 3.6-3.6V5.6C22 3.6 20.4 2 18.4 2zm-1.8 14H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8z" />
+              </svg>
+            </div>
+            <span class="mcard-name">note</span>
+            <span class="mcard-handle">記事・コラム</span>
+          </a>
+
+          <a href="https://x.com/amano_napoli" target="_blank" rel="noopener noreferrer" class="mcard">
+            <div class="mcard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </div>
+            <span class="mcard-name">X</span>
+            <span class="mcard-handle">@amano_napoli</span>
+          </a>
+
+          <a href="https://www.instagram.com/chieto_jp/" target="_blank" rel="noopener noreferrer" class="mcard">
+            <div class="mcard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </div>
+            <span class="mcard-name">Instagram</span>
+            <span class="mcard-handle">@chieto_jp</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
 
 
-<script>
-  /* ─── NAVBAR SCROLL ─── */
-  const navbar = document.getElementById('navbar');
-  let lastY = 0;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    navbar.classList.toggle('scrolled', y > 60);
-    lastY = y;
-  }, { passive: true });
+    <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
 
-  /* ─── MOBILE MENU ─── */
-  const navToggle = document.getElementById('navToggle');
-  const navLinks  = document.getElementById('navLinks');
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.classList.toggle('active', isOpen);
-    navToggle.setAttribute('aria-expanded', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }));
+          <div class="contact-intro fade-in">
+            <span class="section-eyebrow">Contact</span>
+            <h2 id="contact-heading">Let's<br><em>connect.</em></h2>
+            <div class="section-rule" style="margin-top:20px;" aria-hidden="true"></div>
+            <p class="jp">パタヤでのビジネスや、日本とタイをつなぐご相談など、お気軽にご連絡ください。</p>
+            <p>Feel free to reach out for business in Pattaya or connections between Japan and Thailand.</p>
+          </div>
 
-  /* ─── INTERSECTION OBSERVER — FADE IN ─── */
-  const fadeObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        fadeObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+          <div class="clist fade-in" style="transition-delay:0.18s;">
 
-  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-  /* ─── HERO PARALLAX ─── */
-  const heroBg = document.getElementById('heroBg');
-  window.addEventListener('scroll', () => {
-    const s = window.scrollY;
-    if (s < window.innerHeight * 1.2) {
-      heroBg.style.transform = `translateY(${s * 0.38}px)`;
-    }
-  }, { passive: true });
+            <a href="https://line.me/ti/p/Vgn1_ZlgXN" target="_blank" rel="noopener noreferrer" class="citem">
+              <div class="citem-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                </svg>
+              </div>
+              <div>
+                <div class="citem-label">LINE</div>
+                <div class="citem-val">LINEで相談</div>
+              </div>
+            </a>
 
-  /* ─── NETWORK MAP ANIMATION ─── */
-  let mapAnimated = false;
-  const mapObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !mapAnimated) {
-        mapAnimated = true;
-        animateMap();
-        mapObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.25 });
+            <a href="https://facebook.com/chieto.amano" target="_blank" rel="noopener noreferrer" class="citem">
+              <div class="citem-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </div>
+              <div>
+                <div class="citem-label">Facebook</div>
+                <div class="citem-val">chieto.amano</div>
+              </div>
+            </a>
 
-  const networkMapEl = document.getElementById('networkMap');
-  if (networkMapEl) mapObserver.observe(networkMapEl);
+            <a href="tel:+66957018104" class="citem">
+              <div class="citem-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="citem-label">Phone</div>
+                <div class="citem-val">095-701-8104</div>
+              </div>
+            </a>
 
-  function animateMap() {
-    const arc  = document.getElementById('connectionArc');
-    const dot  = document.getElementById('movingDot');
-    if (!arc || !dot) return;
+            <a href="mailto:amano@k2pattaya.co.th" class="citem">
+              <div class="citem-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </div>
+              <div>
+                <div class="citem-label">Email</div>
+                <div class="citem-val">amano@k2pattaya.co.th</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    /* Draw the dashed line */
-    arc.style.transition = 'stroke-dashoffset 2.4s cubic-bezier(0.4,0,0.2,1) 0.2s';
-    arc.style.strokeDashoffset = '0';
 
-    /* Pulse rings */
-    animatePulse('tokyoPulse1',   2.8, 0);
-    animatePulse('tokyoPulse2',   2.8, 0.5);
-    animatePulse('pattayaPulse1', 2.8, 0.4);
-    animatePulse('pattayaPulse2', 2.8, 0.9);
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer>
+      <span class="footer-brand">K2 PATTAYA</span>
+      <p>© 2026 Chieto Amano — Pattaya, Thailand</p>
+      <span class="footer-jp">パタヤで人を繋ぐ男</span>
+    </footer>
 
-    /* Moving dot along path */
-    let t = 0;
-    dot.setAttribute('opacity', '1');
-    const arcLength = arc.getTotalLength ? arc.getTotalLength() : 380;
 
-    function moveDot() {
-      t += 0.0035;
-      if (t > 1) t = 0;
-      try {
-        const pt = arc.getPointAtLength(t * arcLength);
-        dot.setAttribute('cx', pt.x);
-        dot.setAttribute('cy', pt.y);
-        const fade = Math.sin(t * Math.PI);
-        dot.setAttribute('opacity', (fade * 0.9).toFixed(3));
-      } catch(e) {}
-      requestAnimationFrame(moveDot);
-    }
-    setTimeout(moveDot, 800);
-  }
+    <script>
+      /* ─── NAVBAR SCROLL ─── */
+      const navbar = document.getElementById('navbar');
+      let lastY = 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        navbar.classList.toggle('scrolled', y > 60);
+        lastY = y;
+      }, { passive: true });
 
-  function animatePulse(id, duration, delay) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const baseR = parseFloat(el.getAttribute('r'));
-    const maxR  = baseR + 7;
-    let start = null;
-    function step(ts) {
-      if (!start) start = ts + delay * 1000;
-      const elapsed = ts - start;
-      if (elapsed < 0) { requestAnimationFrame(step); return; }
-      const cycle = (elapsed % (duration * 1000)) / (duration * 1000);
-      const r = baseR + (maxR - baseR) * Math.sin(cycle * Math.PI);
-      const opacity = 0.25 * (1 - cycle);
-      el.setAttribute('r', r.toFixed(2));
-      el.setAttribute('opacity', opacity.toFixed(3));
-      requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
+      /* ─── MOBILE MENU ─── */
+      const navToggle = document.getElementById('navToggle');
+      const navLinks = document.getElementById('navLinks');
+      navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }));
 
-  /* ─── ACTIVE NAV LINK ─── */
-  const sections = document.querySelectorAll('section[id]');
-  const navAs    = document.querySelectorAll('.nav-links a');
-  const activeObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navAs.forEach(a => {
-          a.style.color = a.getAttribute('href') === `#${id}` ? 'var(--gold)' : '';
+      /* ─── INTERSECTION OBSERVER — FADE IN ─── */
+      const fadeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
         });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+      /* ─── HERO PARALLAX ─── */
+      const heroBg = document.getElementById('heroBg');
+      window.addEventListener('scroll', () => {
+        const s = window.scrollY;
+        if (s < window.innerHeight * 1.2) {
+          heroBg.style.transform = `translateY(${s * 0.38}px)`;
+        }
+      }, { passive: true });
+
+      /* ─── NETWORK MAP ANIMATION ─── */
+      let mapAnimated = false;
+      const mapObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !mapAnimated) {
+            mapAnimated = true;
+            animateMap();
+            mapObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      const networkMapEl = document.getElementById('networkMap');
+      if (networkMapEl) mapObserver.observe(networkMapEl);
+
+      function animateMap() {
+        const arc = document.getElementById('connectionArc');
+        const dot = document.getElementById('movingDot');
+        if (!arc || !dot) return;
+
+        /* Draw the dashed line */
+        arc.style.transition = 'stroke-dashoffset 2.4s cubic-bezier(0.4,0,0.2,1) 0.2s';
+        arc.style.strokeDashoffset = '0';
+
+        /* Pulse rings */
+        animatePulse('tokyoPulse1', 2.8, 0);
+        animatePulse('tokyoPulse2', 2.8, 0.5);
+        animatePulse('pattayaPulse1', 2.8, 0.4);
+        animatePulse('pattayaPulse2', 2.8, 0.9);
+
+        /* Moving dot along path */
+        let t = 0;
+        dot.setAttribute('opacity', '1');
+        const arcLength = arc.getTotalLength ? arc.getTotalLength() : 380;
+
+        function moveDot() {
+          t += 0.0035;
+          if (t > 1) t = 0;
+          try {
+            const pt = arc.getPointAtLength(t * arcLength);
+            dot.setAttribute('cx', pt.x);
+            dot.setAttribute('cy', pt.y);
+            const fade = Math.sin(t * Math.PI);
+            dot.setAttribute('opacity', (fade * 0.9).toFixed(3));
+          } catch (e) { }
+          requestAnimationFrame(moveDot);
+        }
+        setTimeout(moveDot, 800);
       }
-    });
-  }, { threshold: 0.45 });
-  sections.forEach(s => activeObserver.observe(s));
-</script>
+
+      function animatePulse(id, duration, delay) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const baseR = parseFloat(el.getAttribute('r'));
+        const maxR = baseR + 7;
+        let start = null;
+        function step(ts) {
+          if (!start) start = ts + delay * 1000;
+          const elapsed = ts - start;
+          if (elapsed < 0) { requestAnimationFrame(step); return; }
+          const cycle = (elapsed % (duration * 1000)) / (duration * 1000);
+          const r = baseR + (maxR - baseR) * Math.sin(cycle * Math.PI);
+          const opacity = 0.25 * (1 - cycle);
+          el.setAttribute('r', r.toFixed(2));
+          el.setAttribute('opacity', opacity.toFixed(3));
+          requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      /* ─── ACTIVE NAV LINK ─── */
+      const sections = document.querySelectorAll('section[id]');
+      const navAs = document.querySelectorAll('.nav-links a');
+      const activeObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navAs.forEach(a => {
+              a.style.color = a.getAttribute('href') === `#${id}` ? 'var(--gold)' : '';
+            });
+          }
+        });
+      }, { threshold: 0.45 });
+      sections.forEach(s => activeObserver.observe(s));
+    </script>
 
 </body>
+
 </html>
