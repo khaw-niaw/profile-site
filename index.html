@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Chieto Amano — パタヤで人を繋ぐ男. Japan-Thailand business connector based in Pattaya. Entrepreneur, Connector, Founder of K2 Pattaya.">
+    content="Chieto Amano — パタヤで人を繋ぐ. Japan-Thailand business connector based in Pattaya. Entrepreneur, Connector, Founder of K2 Pattaya.">
   <meta name="keywords"
     content="Chieto Amano, 天野智人, Pattaya, K2 Pattaya, Japan Thailand business, connector, entrepreneur, Kanpai Reuse, MENLABO">
   <meta name="author" content="Chieto Amano">
   <meta property="og:title" content="Chieto Amano — Connecting People in Pattaya">
-  <meta property="og:description" content="パタヤで人を繋ぐ男 — Japan-Thailand business connector based in Pattaya.">
+  <meta property="og:description" content="パタヤで人を繋ぐ — Japan-Thailand business connector based in Pattaya.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
@@ -91,14 +91,27 @@
     }
 
     .nav-logo {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--text);
+      display: flex;
+      align-items: center;
     }
 
-    .nav-logo span {
-      color: var(--gold);
+    .nav-logo img {
+      height: 80px;
+      width: auto;
+      margin-top: -20px; /* 画像上部の余白を相殺して上に引き上げる */
+      margin-bottom: -16px; /* ナビゲーション自体の高さが無駄に広がるのを防ぐ */
+      transition: all 0.4s ease;
+    }
+
+    nav.scrolled .nav-logo img {
+      height: 52px;
+      margin-top: -8px;
+      margin-bottom: -12px;
+    }
+
+    .nav-logo:hover img {
+      opacity: 0.85;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
     }
 
     .nav-links {
@@ -223,6 +236,7 @@
       z-index: 10;
       text-align: center;
       padding: 0 24px;
+      padding-top: 48px;
       max-width: 960px;
     }
 
@@ -232,7 +246,7 @@
       letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 28px;
+      margin-bottom: -12px;
       opacity: 0;
       transform: translateY(16px);
       animation: fadeUp 0.9s ease 0.3s forwards;
@@ -243,10 +257,60 @@
       font-weight: 700;
       letter-spacing: -0.025em;
       line-height: 0.95;
-      margin-bottom: 20px;
+      margin-bottom: 6px;
       opacity: 0;
       transform: translateY(28px);
       animation: fadeUp 0.9s ease 0.55s forwards;
+    }
+
+    @keyframes glow {
+      0% { filter: drop-shadow(0 0 6px rgba(255, 210, 120, 0.3)); }
+      50% { filter: drop-shadow(0 0 18px rgba(255, 210, 120, 0.55)); }
+      100% { filter: drop-shadow(0 0 6px rgba(255, 210, 120, 0.3)); }
+    }
+
+    .hero-name-logo {
+      display: block;
+      max-width: clamp(320px, 52vw, 640px);
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 2px 16px rgba(201, 168, 76, 0.25));
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+
+    .hero-name .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @keyframes fadeUpAndGlow {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
+        text-shadow: 0 0 0 transparent;
+      }
+      15% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 16px rgba(255, 210, 120, 0.65);
+      }
+    }
+
+    @keyframes textGlow {
+      0% { text-shadow: 0 0 4px rgba(255, 210, 120, 0.25); }
+      50% { text-shadow: 0 0 16px rgba(255, 210, 120, 0.65); }
+      100% { text-shadow: 0 0 4px rgba(255, 210, 120, 0.25); }
     }
 
     .hero-japanese {
@@ -255,10 +319,13 @@
       font-weight: 300;
       letter-spacing: 0.25em;
       color: var(--gold-light);
-      margin-bottom: 36px;
+      margin-bottom: 30px;
       opacity: 0;
       transform: translateY(16px);
-      animation: fadeUp 0.9s ease 0.8s forwards;
+      /* フェードアップした後に呼吸するグロウアニメーションに切り替える */
+      animation: 
+        fadeUp 0.9s ease 0.8s forwards,
+        textGlow 4s ease-in-out 1.7s infinite alternate;
     }
 
     .hero-rule {
@@ -421,8 +488,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%),
-        url('images/identity-pattaya.png') center center / cover no-repeat;
+        linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.05) 100%),
+        url('images/chieto-amano-pattaya.jpg') center top / cover no-repeat;
     }
 
     .identity-stats {
@@ -432,21 +499,17 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 44px;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 55%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 45%, transparent 65%);
     }
 
     .stat-row {
       display: flex;
       flex-direction: column;
       gap: 4px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
     .stat-row:last-child {
-      padding-bottom: 0;
-      border-bottom: none;
       margin-bottom: 0;
     }
 
@@ -455,6 +518,7 @@
       font-weight: 700;
       color: var(--gold);
       line-height: 1;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     .stat-label {
@@ -472,7 +536,9 @@
       font-size: 0.6rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(201, 168, 76, 0.4);
+      color: rgba(201, 168, 76, 0.5);
+      line-height: 1.8;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
     }
 
     /* ─── STORY ─── */
@@ -521,6 +587,7 @@
 
     .tl-body {
       padding-left: 4px;
+      margin-top: 28px; /* 年号よりもタイトル・本文を少し下にずらす */
     }
 
     .tl-title {
@@ -551,7 +618,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 2px;
     }
 
@@ -585,10 +652,7 @@
     }
 
     .pcard-bg-4 {
-      background:
-        radial-gradient(ellipse at 35% 50%, rgba(0, 90, 60, 0.2) 0%, transparent 52%),
-        radial-gradient(ellipse at 68% 45%, rgba(201, 168, 76, 0.1) 0%, transparent 50%),
-        linear-gradient(150deg, #001808 0%, #003018 40%, #004c28 58%, #003018 78%, #001208 100%);
+      background: url('images/project-consulting.jpg') center center / cover no-repeat;
     }
 
     .pcard-grid-svg {
@@ -602,7 +666,7 @@
     .pcard-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.35) 50%, transparent 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.15) 100%);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -611,7 +675,7 @@
     }
 
     .pcard:hover .pcard-overlay {
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0.15) 100%);
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.98) 0%, rgba(0, 0, 0, 0.75) 55%, rgba(0, 0, 0, 0.2) 100%);
     }
 
     .pcard-num {
@@ -628,22 +692,26 @@
       letter-spacing: -0.01em;
       line-height: 1.2;
       margin-bottom: 10px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
     }
 
     .pcard-desc {
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 0.85rem;
       font-weight: 300;
-      color: var(--text-sub);
+      color: rgba(255, 255, 255, 0.75);
       line-height: 1.75;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
     }
 
-    .pcard:hover .pcard-desc {
-      opacity: 1;
-      transform: translateY(0);
+    .pcard-ref {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(201, 168, 76, 0.25);
+      line-height: 1.8;
     }
 
     /* ─── NETWORK ─── */
@@ -909,6 +977,102 @@
       letter-spacing: 0.08em;
     }
 
+    /* ─── COOKIE BANNER ─── */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: rgba(8, 8, 8, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--gold-border);
+      padding: 20px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      transform: translateY(100%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #cookie-banner.visible {
+      transform: translateY(0);
+    }
+
+    .cookie-text {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .cookie-text a {
+      color: var(--gold);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cookie-text a:hover {
+      color: var(--gold-light);
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .cookie-btn {
+      padding: 9px 22px;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .cookie-btn-accept {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .cookie-btn-accept:hover {
+      background: var(--gold-light);
+    }
+
+    .cookie-btn-decline {
+      background: transparent;
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+    }
+
+    .cookie-btn-decline:hover {
+      border-color: var(--gold-border);
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      #cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+        gap: 16px;
+      }
+
+      .cookie-actions {
+        width: 100%;
+      }
+
+      .cookie-btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
     /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       from {
@@ -1021,6 +1185,10 @@
         grid-template-columns: 1fr;
       }
 
+      .pcard {
+        aspect-ratio: 16/9;
+      }
+
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 56px;
@@ -1053,7 +1221,16 @@
       }
 
       .network-map-wrap {
-        height: 360px;
+        height: 420px;
+      }
+
+      .map-image-wrap {
+        min-height: 420px;
+      }
+
+      .map-img {
+        object-fit: cover;
+        object-position: center center;
       }
     }
   </style>
@@ -1063,11 +1240,13 @@
 
   <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">CA<span>.</span></a>
+    <a href="#hero" class="nav-logo">
+      <img src="images/chieto-amano-signature-white-black-bg.png" alt="Chieto Amano">
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#identity">Identity</a></li>
       <li><a href="#story">Story</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#projects">What I Do</a></li>
       <li><a href="#network">Connection</a></li>
       <li><a href="#media">Media</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1110,8 +1289,11 @@
 
     <div class="hero-content">
       <p class="hero-eyebrow">Pattaya, Thailand</p>
-      <h1 class="hero-name">Chieto Amano</h1>
-      <p class="hero-japanese">パタヤで人を繋ぐ男</p>
+      <h1 class="hero-name">
+        <img src="images/chieto-amano-signature-gold-black-bg.png" alt="Chieto Amano" class="hero-name-logo">
+        <span class="sr-only">Chieto Amano</span>
+      </h1>
+      <p class="hero-japanese">パタヤで人を繋ぐ</p>
       <div class="hero-rule" aria-hidden="true"></div>
       <p class="hero-tagline">Entrepreneur &nbsp;&mdash;&nbsp; Connector &nbsp;&mdash;&nbsp; Pattaya</p>
     </div>
@@ -1130,12 +1312,12 @@
 
         <div class="identity-body fade-in">
           <span class="section-eyebrow">Identity</span>
-          <h2 class="section-title" id="identity-heading">Japan meets<br>Thailand.</h2>
+          <h2 class="section-title" id="identity-heading">Japan Meets<br>Thailand</h2>
           <div class="section-rule" aria-hidden="true"></div>
-          <p class="identity-jp">天野智人は、日本とタイを繋ぐビジネスコネクター。パタヤを拠点に、人と人、企業と企業の橋渡しをしている。</p>
-          <p>A <strong>Japan–Thailand business connector</strong> based in Pattaya — bridging cultures, building
-            opportunities, and creating lasting networks across borders.</p>
-          <p class="identity-jp">リユースビジネス、飲食業、進出支援という<strong>3本柱</strong>で、パタヤのビジネスエコシステムを日々構築している。</p>
+          <p class="identity-jp">日本とタイを繋ぐビジネスコネクターとして、パタヤを拠点に活動。人と人、企業と企業の橋渡しを担い、日々動いている。</p>
+          <p class="identity-jp">リユースビジネス、飲食業、進出支援という3本柱で、パタヤのビジネスの土台を作っている。</p>
+          <p class="identity-jp">パタヤは、最初から目指した場所ではない。ただ、妻の地元であるこの街に根を張り、損得抜きで人を繋いでいたら、東京・大阪・パタヤをまたぐチームが自然とできあがっていた。</p>
+          <p>A Japan — Thailand connector based in Pattaya — not just in theory, but on the ground, in the room, making introductions that stick.</p>
           <div class="tags">
             <span class="tag">Entrepreneur</span>
             <span class="tag">Connector</span>
@@ -1148,7 +1330,7 @@
         <div class="identity-visual fade-in" style="transition-delay:0.18s;" aria-hidden="true">
           <div class="identity-visual-bg"></div>
           <!-- SVG decorative element -->
-          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 480 520"
+          <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.04;" viewBox="0 0 480 520"
             preserveAspectRatio="xMidYMid slice">
             <line x1="0" y1="130" x2="480" y2="130" stroke="#C9A84C" stroke-width="0.5" />
             <line x1="0" y1="260" x2="480" y2="260" stroke="#C9A84C" stroke-width="0.5" />
@@ -1159,7 +1341,7 @@
             <circle cx="240" cy="240" r="80" stroke="#C9A84C" stroke-width="0.8" fill="none" />
             <circle cx="240" cy="240" r="140" stroke="#C9A84C" stroke-width="0.4" fill="none" />
           </svg>
-          <span class="identity-photo-label">Pattaya Bay — Thailand</span>
+          <span class="identity-photo-label">Chieto Amano<br>Pattaya</span>
           <div class="identity-stats">
             <div class="stat-row">
               <span class="stat-num">2007</span>
@@ -1186,8 +1368,11 @@
     <div class="container">
       <div class="fade-in">
         <span class="section-eyebrow">Story</span>
-        <h2 class="section-title" id="story-heading">The journey.</h2>
+        <h2 class="section-title" id="story-heading">The Journey</h2>
         <div class="section-rule" aria-hidden="true"></div>
+        <p class="story-lead"
+          style="font-size:1.15rem; color:rgba(255,255,255,0.55); font-weight:300; line-height:1.9; margin-top:24px; letter-spacing:0.04em;">
+          東京から東南アジアへ。<br>そして、パタヤへ。</p>
       </div>
 
       <div class="timeline-wrap" style="margin-top:64px;">
@@ -1198,7 +1383,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">株式会社C・S・R 設立</h3>
-            <p class="tl-desc">26歳で独立。東京・池袋を拠点に経営を開始。自らの力でビジネスの世界に踏み出した最初の一歩。</p>
+            <p class="tl-desc">26歳で独立。<br>東京・池袋を拠点に、仲間とともに走り出す。<br>うまくいかないことも多い。それでも、この一歩がすべての原点。</p>
           </div>
         </div>
 
@@ -1207,7 +1392,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">株式会社feemo 設立</h3>
-            <p class="tl-desc">C・S・Rを譲渡後、新会社で広告・マーケティング事業を展開。デジタルの波を掴み、新たなフェーズへ。</p>
+            <p class="tl-desc">C・S・Rを仲間に譲り、新会社を設立。<br>広告・マーケティング事業で新しい挑戦を始める。<br>時間ができた分、海外を回る機会が増えていく。<br>このとき「2017年までにタイに住む」と、自分の中で決める。</p>
           </div>
         </div>
 
@@ -1216,7 +1401,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">マレーシアへ移住</h3>
-            <p class="tl-desc">東南アジアを拠点にグローバル展開を開始。国境を越え、より広いビジネスの視野へ。</p>
+            <p class="tl-desc">東南アジアへ拠点を移す。<br>毎月のように各国を飛び回る生活。</p>
           </div>
         </div>
 
@@ -1225,25 +1410,38 @@
 
           <div class="tl-body">
             <h3 class="tl-title">フィリピン法人設立</h3>
-            <p class="tl-desc">映像制作・開発のオフショア拠点を構築。アジア全域にネットワークを着実に広げていく。</p>
+            <p class="tl-desc">フィリピンにオフショア拠点を構築。<br>同時にバンコクにも拠点を持ち、日本・フィリピン・タイを行き来する生活が続く。</p>
           </div>
         </div>
 
         <div class="tl-item fade-in" style="transition-delay:0.33s;">
-          <div class="tl-year">2020</div>
+          <div class="tl-year">2018</div>
 
           <div class="tl-body">
-            <h3 class="tl-title">コロナ禍でタイへ</h3>
-            <p class="tl-desc">フィリピンのロックダウンを受け緊急脱出。パタヤへ移り住み、新たな人生の拠点を見つける。</p>
+            <h3 class="tl-title">バンコクからパタヤへ</h3>
+            <p class="tl-desc">東京と同じ匂いがするバンコクを避け、妻の地元であるパタヤへ。<br>自分のペースで動ける場所を、ここに見つける。</p>
+
+            <h3 class="tl-title" style="margin-top: 36px;">機内での出会い、そしてイランへ</h3>
+            <p class="tl-desc">福岡から成田へ向かう機内。隣に座ったイラン人の大学教授との出会い。<br>「フィリピンを良くしたいから会社をやっている」。そう語ると、彼は感激し母国の現状を打ち明ける。<br>「国内に仕事がなく、みな出稼ぎに行ってしまう。教え子たちが働ける場所を作るために力を貸してほしい」。<br>その熱意に動かされ、数ヶ月に一度イランへ通い、ビジネスを形にする日々。<br>しかし2019年の国際情勢の緊迫化、そしてコロナ禍により、その道は断たれる。<br>ビジネスは叶わなかったが、イランという素敵な国の景色と人々の熱気は、今も心に残る。</p>
           </div>
         </div>
 
         <div class="tl-item fade-in" style="transition-delay:0.4s;">
+          <div class="tl-year">2020</div>
+
+          <div class="tl-body">
+            <h3 class="tl-title">コロナ禍</h3>
+            <p class="tl-desc">フィリピンがロックダウン。<br>緊急脱出して向かった先は、家族のいるパタヤ。<br>気づけば、ここが完全な拠点に。</p>
+          </div>
+        </div>
+
+        <div class="tl-item fade-in" style="transition-delay:0.47s;">
           <div class="tl-year">2021〜</div>
 
           <div class="tl-body">
             <h3 class="tl-title">パタヤで本格事業開始</h3>
-            <p class="tl-desc">K2 PATTAYA を中核に、リユース・飲食・進出支援の3本柱で展開中。パタヤで人を繋ぐ男として、コミュニティを育て続けている。</p>
+            <p class="tl-desc">
+              「ここで事業を興すつもりはなかった」。<br><br>それでもパタヤに根を張り、人をつなぎ続けるうちに事業は広がっていく。<br>今では、日本の経営者たちが自然と集まってくる。<br><br>K2 PATTAYAを中核に、<br>リユース・飲食・進出支援の3本柱で事業を展開している。</p>
           </div>
         </div>
 
@@ -1256,8 +1454,8 @@
   <section id="projects" aria-labelledby="projects-heading">
     <div class="container projects-intro">
       <div class="fade-in">
-        <span class="section-eyebrow">Projects</span>
-        <h2 class="section-title" id="projects-heading">Current<br>ventures.</h2>
+        <span class="section-eyebrow">What I Do</span>
+        <h2 class="section-title" id="projects-heading">Business<br>Domains</h2>
         <div class="section-rule" aria-hidden="true"></div>
       </div>
     </div>
@@ -1274,7 +1472,6 @@
             <line x1="160" y1="0" x2="160" y2="300" stroke="#C9A84C" stroke-width="0.6" />
             <line x1="240" y1="0" x2="240" y2="300" stroke="#C9A84C" stroke-width="0.6" />
             <line x1="320" y1="0" x2="320" y2="300" stroke="#C9A84C" stroke-width="0.6" />
-            <!-- Shelving icon -->
             <rect x="140" y="80" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1" />
             <rect x="140" y="140" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1" />
             <rect x="140" y="200" width="120" height="8" fill="rgba(201,168,76,0.25)" rx="1" />
@@ -1287,15 +1484,15 @@
         </div>
         <div class="pcard-overlay">
           <span class="pcard-num">01</span>
-          <h3 class="pcard-title">Kanpai Reuse Pattaya</h3>
-          <p class="pcard-desc">日本から仕入れた良質な中古品を、パタヤで販売するリユースショップ</p>
+          <h3 class="pcard-title">リユース事業</h3>
+          <p class="pcard-desc">日本品質の良質な中古品をパタヤへ。仕入れから販売まで、リユースビジネスの現場を動かす。</p>
+          <p class="pcard-ref">実績：3店舗展開中</p>
         </div>
       </article>
 
       <article class="pcard">
         <div class="pcard-bg pcard-bg-2" aria-hidden="true">
           <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-            <!-- Pizza circle decoration -->
             <circle cx="200" cy="150" r="110" stroke="#C9A84C" stroke-width="0.8" fill="none" />
             <circle cx="200" cy="150" r="85" stroke="#C9A84C" stroke-width="0.5" fill="none" />
             <circle cx="200" cy="150" r="55" stroke="#C9A84C" stroke-width="0.4" fill="none" stroke-dasharray="4,4" />
@@ -1307,61 +1504,19 @@
         </div>
         <div class="pcard-overlay">
           <span class="pcard-num">02</span>
-          <h3 class="pcard-title">Napoli no Kama Thailand</h3>
-          <p class="pcard-desc">日本品質の宅配ピザブランドのタイ展開</p>
+          <h3 class="pcard-title">飲食事業</h3>
+          <p class="pcard-desc">日本の飲食ブランドをタイで展開。現地オペレーションの構築から運営まで関わる。</p>
+          <p class="pcard-ref">実績：2ブランド展開中</p>
         </div>
       </article>
 
       <article class="pcard">
-        <div class="pcard-bg pcard-bg-3" aria-hidden="true">
-          <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-            <!-- Ramen bowl -->
-            <ellipse cx="200" cy="180" rx="130" ry="65" stroke="#C9A84C" stroke-width="0.9" fill="none" />
-            <ellipse cx="200" cy="168" rx="130" ry="58" stroke="#C9A84C" stroke-width="0.5" fill="none" />
-            <path d="M 70 168 Q 200 220 330 168" stroke="#C9A84C" stroke-width="0.4" fill="none" />
-            <!-- Chopsticks -->
-            <line x1="168" y1="50" x2="180" y2="135" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" />
-            <line x1="180" y1="50" x2="195" y2="135" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" />
-            <!-- Steam -->
-            <path d="M 175 80 Q 182 68 175 58" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6" />
-            <path d="M 195 75 Q 202 62 195 52" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6" />
-            <path d="M 215 80 Q 222 67 215 57" stroke="#C9A84C" stroke-width="0.8" fill="none" opacity="0.6" />
-          </svg>
-        </div>
+        <div class="pcard-bg pcard-bg-4" aria-hidden="true"></div>
         <div class="pcard-overlay">
           <span class="pcard-num">03</span>
-          <h3 class="pcard-title">MENLABO</h3>
-          <p class="pcard-desc">ラーメン・居酒屋スタイルの飲食店</p>
-        </div>
-      </article>
-
-      <article class="pcard">
-        <div class="pcard-bg pcard-bg-4" aria-hidden="true">
-          <svg class="pcard-grid-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-            <!-- Network graph -->
-            <circle cx="120" cy="150" r="7" fill="rgba(201,168,76,0.6)" />
-            <circle cx="280" cy="150" r="7" fill="rgba(201,168,76,0.6)" />
-            <circle cx="200" cy="90" r="5" fill="rgba(201,168,76,0.4)" />
-            <circle cx="200" cy="210" r="5" fill="rgba(201,168,76,0.4)" />
-            <circle cx="148" cy="100" r="3.5" fill="rgba(201,168,76,0.3)" />
-            <circle cx="252" cy="100" r="3.5" fill="rgba(201,168,76,0.3)" />
-            <circle cx="148" cy="200" r="3.5" fill="rgba(201,168,76,0.3)" />
-            <circle cx="252" cy="200" r="3.5" fill="rgba(201,168,76,0.3)" />
-            <line x1="120" y1="150" x2="280" y2="150" stroke="#C9A84C" stroke-width="0.7" stroke-dasharray="5,4" />
-            <line x1="120" y1="150" x2="200" y2="90" stroke="#C9A84C" stroke-width="0.7" />
-            <line x1="120" y1="150" x2="200" y2="210" stroke="#C9A84C" stroke-width="0.7" />
-            <line x1="280" y1="150" x2="200" y2="90" stroke="#C9A84C" stroke-width="0.7" />
-            <line x1="280" y1="150" x2="200" y2="210" stroke="#C9A84C" stroke-width="0.7" />
-            <line x1="200" y1="90" x2="148" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
-            <line x1="200" y1="90" x2="252" y2="100" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
-            <line x1="200" y1="210" x2="148" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
-            <line x1="200" y1="210" x2="252" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.6" />
-          </svg>
-        </div>
-        <div class="pcard-overlay">
-          <span class="pcard-num">04</span>
-          <h3 class="pcard-title">Business Network</h3>
-          <p class="pcard-desc">日本とタイのビジネスを繋ぐコネクター活動</p>
+          <h3 class="pcard-title">進出支援事業</h3>
+          <p class="pcard-desc">日本企業・経営者のタイ参入を、現地ネットワークと経験で支える。人を繋ぎ、道を作る。</p>
+          <p class="pcard-ref">実績：タイ法人設立 10社支援</p>
         </div>
       </article>
 
@@ -1376,7 +1531,7 @@
 
         <div class="network-text fade-in">
           <span class="section-eyebrow">Connection</span>
-          <h2 class="section-title" id="network-heading">Bridging<br>two worlds.</h2>
+          <h2 class="section-title" id="network-heading">Bridging<br>Two Worlds</h2>
           <div class="section-rule" aria-hidden="true"></div>
           <p class="jp">日本とタイの間に橋を架け、ビジネスや文化、人をつなぎながら、パタヤを中心に新しいつながりを広げています。</p>
           <p>Connecting businesses, cultures, and people across 4,600 km.</p>
@@ -1404,8 +1559,11 @@
         <div class="network-map-wrap fade-in" id="networkMap" style="transition-delay:0.25s;"
           aria-label="Map showing connection between Japan and Thailand">
           <div class="map-image-wrap">
-            <img src="images/map.jpeg" alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand"
-              class="map-img" />
+            <picture>
+              <source media="(max-width: 768px)" srcset="images/network-map-mobile.jpg">
+              <img src="images/map.jpeg" alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand"
+                class="map-img" />
+            </picture>
           </div>
         </div>
 
@@ -1418,7 +1576,7 @@
       <div class="container">
         <div class="fade-in">
           <span class="section-eyebrow">Media</span>
-          <h2 class="section-title" id="media-heading">Follow<br>the journey.</h2>
+          <h2 class="section-title" id="media-heading">Follow<br>the Journey</h2>
           <div class="section-rule" aria-hidden="true"></div>
         </div>
 
@@ -1504,46 +1662,61 @@
               </div>
             </a>
 
-            <a href="tel:+66957018104" class="citem">
-              <div class="citem-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                </svg>
-              </div>
-              <div>
-                <div class="citem-label">Phone</div>
-                <div class="citem-val">095-701-8104</div>
-              </div>
-            </a>
 
-            <a href="mailto:amano@k2pattaya.co.th" class="citem">
-              <div class="citem-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                </svg>
-              </div>
-              <div>
-                <div class="citem-label">Email</div>
-                <div class="citem-val">amano@k2pattaya.co.th</div>
-              </div>
-            </a>
           </div>
         </div>
       </div>
     </section>
 
 
+    <!-- ═══════════════════════════ COOKIE BANNER ═══════════════════════════ -->
+    <div id="cookie-banner" role="dialog" aria-label="Cookie の使用について">
+      <p class="cookie-text">
+        本サイトでは、利用状況の分析のために Cookie を使用しています。
+        詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。
+      </p>
+      <div class="cookie-actions">
+        <button class="cookie-btn cookie-btn-decline" id="cookieDecline">拒否する</button>
+        <button class="cookie-btn cookie-btn-accept" id="cookieAccept">同意する</button>
+      </div>
+    </div>
+
     <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
     <footer>
-      <span class="footer-brand">K2 PATTAYA</span>
       <p>© 2026 Chieto Amano — Pattaya, Thailand</p>
-      <span class="footer-jp">パタヤで人を繋ぐ男</span>
+      <a href="privacy.html" style="font-size:0.72rem;color:var(--text-sub);letter-spacing:0.04em;transition:color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-sub)'">プライバシーポリシー</a>
     </footer>
 
 
     <script>
+      /* ─── COOKIE CONSENT ─── */
+      (function () {
+        const COOKIE_KEY = 'cookie_consent';
+        const banner = document.getElementById('cookie-banner');
+        const consent = localStorage.getItem(COOKIE_KEY);
+
+        if (!consent) {
+          // 少し遅らせて表示（ページ読み込み直後は避ける）
+          setTimeout(() => banner.classList.add('visible'), 1200);
+        }
+
+        function hideBanner() {
+          banner.classList.remove('visible');
+        }
+
+        document.getElementById('cookieAccept').addEventListener('click', function () {
+          localStorage.setItem(COOKIE_KEY, 'accepted');
+          hideBanner();
+          // ここに Google Analytics の初期化コードを追加
+          // loadGoogleAnalytics();
+        });
+
+        document.getElementById('cookieDecline').addEventListener('click', function () {
+          localStorage.setItem(COOKIE_KEY, 'declined');
+          hideBanner();
+        });
+      })();
+
       /* ─── NAVBAR SCROLL ─── */
       const navbar = document.getElementById('navbar');
       window.addEventListener('scroll', () => {

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chieto Amano のプライバシーポリシー・Cookieポリシー">
+  <meta name="robots" content="noindex, follow">
+  <title>プライバシーポリシー | Chieto Amano</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --gold-border: rgba(201, 168, 76, 0.25);
+      --text: #F5F5F5;
+      --text-sub: #888888;
+      --surface: #050505;
+      --border: rgba(255, 255, 255, 0.07);
+    }
+
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: var(--gold); }
+    a:hover { color: var(--gold-light); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 20px 56px;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--gold-border);
+      display: flex; align-items: center; gap: 24px;
+    }
+
+    .nav-back {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-sub);
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.3s ease;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .nav-back svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* CONTENT */
+    .page-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 140px 56px 100px;
+    }
+
+    .page-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .page-date {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      letter-spacing: 0.06em;
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .rule {
+      width: 44px; height: 2px;
+      background: var(--gold);
+      margin: 0 0 48px;
+    }
+
+    h2 {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      margin: 52px 0 16px;
+      padding-left: 16px;
+      border-left: 2px solid var(--gold);
+    }
+
+    h2:first-of-type { margin-top: 0; }
+
+    p {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text-sub);
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    p strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 0 20px;
+      padding: 0;
+    }
+
+    ul li {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text-sub);
+      line-height: 1.9;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.75em;
+      width: 6px; height: 1px;
+      background: var(--gold);
+    }
+
+    .contact-block {
+      margin-top: 56px;
+      padding: 32px 36px;
+      border: 1px solid var(--gold-border);
+      background: rgba(201, 168, 76, 0.03);
+    }
+
+    .contact-block p {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--text-sub);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .page-wrap { padding: 120px 24px 80px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      トップへ戻る
+    </a>
+  </nav>
+
+  <div class="page-wrap">
+
+    <span class="page-eyebrow">Legal</span>
+    <h1>プライバシーポリシー<br>/ Cookie ポリシー</h1>
+    <p class="page-date">最終更新日：2026年3月13日</p>
+
+    <div class="rule" aria-hidden="true"></div>
+
+    <!-- ─── 1 ─── -->
+    <h2>1. 基本方針</h2>
+    <p>
+      Chieto Amano（以下「当サイト運営者」）は、本ウェブサイト（chieto-amano.com、以下「本サイト」）を通じて取得する個人情報を、タイ王国の個人情報保護法（PDPA: Personal Data Protection Act B.E. 2562）および日本の個人情報保護法の趣旨に則り、適切に管理・保護します。
+    </p>
+
+    <!-- ─── 2 ─── -->
+    <h2>2. 収集する情報</h2>
+    <p>本サイトでは、以下の情報を収集することがあります。</p>
+    <ul>
+      <li><strong>お問い合わせ情報</strong>：お名前、メールアドレス、電話番号、メッセージ内容など、お客様が自発的に送信した情報</li>
+      <li><strong>アクセスログ</strong>：IPアドレス、ブラウザの種類、閲覧ページ、参照元URL、閲覧日時</li>
+      <li><strong>Cookie・トラッキング情報</strong>：Google Analytics 等の解析ツールが自動的に収集する情報（詳細は「5. Cookie について」を参照）</li>
+    </ul>
+
+    <!-- ─── 3 ─── -->
+    <h2>3. 利用目的</h2>
+    <p>収集した情報は、以下の目的のみに使用します。</p>
+    <ul>
+      <li>お問い合わせへの返信・対応</li>
+      <li>本サイトの品質改善および利用状況の分析</li>
+      <li>法令に基づく対応が必要な場合</li>
+    </ul>
+    <p>取得した個人情報を、上記目的以外に使用することはありません。また、本人の同意なく第三者へ提供することはありません。ただし、法令に基づく開示要求があった場合はこの限りではありません。</p>
+
+    <!-- ─── 4 ─── -->
+    <h2>4. 第三者サービスへの情報提供</h2>
+    <p>本サイトでは、サービス向上のために以下の外部サービスを使用することがあります。これらのサービスは、各社のプライバシーポリシーに従い情報を処理します。</p>
+    <ul>
+      <li><strong>Google Analytics</strong>（Google LLC）：サイトの利用状況分析</li>
+      <li><strong>Google Fonts</strong>（Google LLC）：フォントの読み込み</li>
+    </ul>
+    <p>各サービスのプライバシーポリシーについては、各社のウェブサイトをご確認ください。</p>
+
+    <!-- ─── 5 ─── -->
+    <h2>5. Cookie について</h2>
+    <p>
+      Cookie とは、ウェブサイトがブラウザに保存する小さなテキストファイルです。本サイトでは以下の種類の Cookie を使用します。
+    </p>
+    <ul>
+      <li><strong>必須 Cookie</strong>：サイトの基本機能（Cookie 同意設定の保存など）に必要なもの。同意なしに使用します。</li>
+      <li><strong>分析 Cookie</strong>：Google Analytics によるアクセス解析に使用。お客様の同意を得た場合のみ有効にします。</li>
+    </ul>
+    <p>
+      Cookie の使用に同意しない場合、ブラウザの設定から Cookie を無効にすることができます。ただし、一部機能が正常に動作しない場合があります。
+    </p>
+    <p>
+      分析 Cookie の無効化には、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics オプトアウトアドオン</a>も利用できます。
+    </p>
+
+    <!-- ─── 6 ─── -->
+    <h2>6. 情報の保存期間</h2>
+    <p>
+      お問い合わせ情報は、対応完了後 2 年間保存し、その後適切に削除します。アクセスログ・分析データは最大 26 ヶ月間保存されます（Google Analytics のデータ保持設定に準じます）。
+    </p>
+
+    <!-- ─── 7 ─── -->
+    <h2>7. お客様の権利（PDPA / 個人情報保護法）</h2>
+    <p>お客様は、ご自身の個人情報について以下の権利を有します。</p>
+    <ul>
+      <li>アクセス権：保有している個人情報の開示を求める権利</li>
+      <li>訂正権：不正確な情報の訂正を求める権利</li>
+      <li>削除権：一定の条件のもとで情報の削除を求める権利</li>
+      <li>処理制限権：個人情報の利用を制限する権利</li>
+      <li>同意撤回権：同意に基づく処理について、いつでも同意を撤回する権利</li>
+    </ul>
+    <p>権利を行使する場合は、下記の連絡先までご連絡ください。</p>
+
+    <!-- ─── 8 ─── -->
+    <h2>8. セキュリティ</h2>
+    <p>
+      取得した個人情報は、不正アクセス・紛失・改ざんを防ぐため、合理的なセキュリティ対策を講じます。ただし、インターネットを経由したデータ送信には固有のリスクが伴うことをご了承ください。
+    </p>
+
+    <!-- ─── 9 ─── -->
+    <h2>9. 未成年者について</h2>
+    <p>
+      本サイトは 16 歳未満の方を対象としていません。16 歳未満の方の個人情報を意図せず収集した場合は、速やかに削除します。
+    </p>
+
+    <!-- ─── 10 ─── -->
+    <h2>10. ポリシーの変更</h2>
+    <p>
+      本ポリシーは、法令の改正や運営方針の変更に伴い、予告なく改訂することがあります。変更後は本ページにて最新版を掲載します。重要な変更がある場合は、サイト上でお知らせします。
+    </p>
+
+    <!-- ─── 11 ─── -->
+    <h2>11. お問い合わせ</h2>
+    <p>本ポリシーに関するお問い合わせや、個人情報に関する権利行使のご請求は、以下までご連絡ください。</p>
+
+    <div class="contact-block">
+      <p><strong>Chieto Amano</strong></p>
+      <p>所在地：Pattaya, Chonburi, Thailand</p>
+      <p>メール：<a href="mailto:amano@k2pattaya.co.th">amano@k2pattaya.co.th</a></p>
+      <p>お問い合わせへの返信は、原則 7 営業日以内に行います。</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Chieto Amano — Pattaya, Thailand &nbsp;|&nbsp; <a href="index.html" style="color:var(--text-sub);">トップページへ</a></p>
+  </footer>
+
+</body>
+</html>
