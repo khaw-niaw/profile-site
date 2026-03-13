@@ -98,8 +98,10 @@
     .nav-logo img {
       height: 80px;
       width: auto;
-      margin-top: -20px; /* 画像上部の余白を相殺して上に引き上げる */
-      margin-bottom: -16px; /* ナビゲーション自体の高さが無駄に広がるのを防ぐ */
+      margin-top: -20px;
+      /* 画像上部の余白を相殺して上に引き上げる */
+      margin-bottom: -16px;
+      /* ナビゲーション自体の高さが無駄に広がるのを防ぐ */
       transition: all 0.4s ease;
     }
 
@@ -264,9 +266,17 @@
     }
 
     @keyframes glow {
-      0% { filter: drop-shadow(0 0 6px rgba(255, 210, 120, 0.3)); }
-      50% { filter: drop-shadow(0 0 18px rgba(255, 210, 120, 0.55)); }
-      100% { filter: drop-shadow(0 0 6px rgba(255, 210, 120, 0.3)); }
+      0% {
+        filter: drop-shadow(0 0 6px rgba(255, 210, 120, 0.3));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 18px rgba(255, 210, 120, 0.55));
+      }
+
+      100% {
+        filter: drop-shadow(0 0 6px rgba(255, 210, 120, 0.3));
+      }
     }
 
     .hero-name-logo {
@@ -296,10 +306,12 @@
         transform: translateY(16px);
         text-shadow: 0 0 0 transparent;
       }
+
       15% {
         opacity: 1;
         transform: translateY(0);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
@@ -308,9 +320,17 @@
     }
 
     @keyframes textGlow {
-      0% { text-shadow: 0 0 4px rgba(255, 210, 120, 0.25); }
-      50% { text-shadow: 0 0 16px rgba(255, 210, 120, 0.65); }
-      100% { text-shadow: 0 0 4px rgba(255, 210, 120, 0.25); }
+      0% {
+        text-shadow: 0 0 4px rgba(255, 210, 120, 0.25);
+      }
+
+      50% {
+        text-shadow: 0 0 16px rgba(255, 210, 120, 0.65);
+      }
+
+      100% {
+        text-shadow: 0 0 4px rgba(255, 210, 120, 0.25);
+      }
     }
 
     .hero-japanese {
@@ -323,7 +343,7 @@
       opacity: 0;
       transform: translateY(16px);
       /* フェードアップした後に呼吸するグロウアニメーションに切り替える */
-      animation: 
+      animation:
         fadeUp 0.9s ease 0.8s forwards,
         textGlow 4s ease-in-out 1.7s infinite alternate;
     }
@@ -587,7 +607,8 @@
 
     .tl-body {
       padding-left: 4px;
-      margin-top: 28px; /* 年号よりもタイトル・本文を少し下にずらす */
+      margin-top: 28px;
+      /* 年号よりもタイトル・本文を少し下にずらす */
     }
 
     .tl-title {
@@ -866,7 +887,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 100px;
-      align-items: start;
+      align-items: center;
     }
 
     .contact-intro h2 {
@@ -943,7 +964,124 @@
       color: var(--text);
     }
 
-    /* ─── FOOTER ─── */
+    /* ─── CONTACT FORM ─── */
+    .contact-form-wrap {
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-form-title {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--text-sub);
+      font-weight: 300;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold-border);
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.7;
+    }
+
+    .form-submit-btn {
+      align-self: center;
+      padding: 13px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .form-submit-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .form-submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-thanks {
+      display: none;
+      padding: 32px 0;
+    }
+
+    .form-thanks.visible {
+      display: block;
+    }
+
+    .form-thanks p {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.92rem;
+      color: var(--gold);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .form-thanks .thanks-sub {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
     #network {
       padding-bottom: 0;
     }
@@ -952,14 +1090,18 @@
       padding: 24px 56px;
       border-top: 1px solid var(--border);
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
+      position: relative;
     }
 
     footer p {
       font-size: 0.72rem;
       color: var(--text-sub);
       letter-spacing: 0.04em;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .footer-brand {
@@ -1317,7 +1459,8 @@
           <p class="identity-jp">日本とタイを繋ぐビジネスコネクターとして、パタヤを拠点に活動。人と人、企業と企業の橋渡しを担い、日々動いている。</p>
           <p class="identity-jp">リユースビジネス、飲食業、進出支援という3本柱で、パタヤのビジネスの土台を作っている。</p>
           <p class="identity-jp">パタヤは、最初から目指した場所ではない。ただ、妻の地元であるこの街に根を張り、損得抜きで人を繋いでいたら、東京・大阪・パタヤをまたぐチームが自然とできあがっていた。</p>
-          <p>A Japan — Thailand connector based in Pattaya — not just in theory, but on the ground, in the room, making introductions that stick.</p>
+          <p>A Japan — Thailand connector based in Pattaya — not just in theory, but on the ground, in the room, making
+            introductions that stick.</p>
           <div class="tags">
             <span class="tag">Entrepreneur</span>
             <span class="tag">Connector</span>
@@ -1392,7 +1535,9 @@
 
           <div class="tl-body">
             <h3 class="tl-title">株式会社feemo 設立</h3>
-            <p class="tl-desc">C・S・Rを仲間に譲り、新会社を設立。<br>広告・マーケティング事業で新しい挑戦を始める。<br>時間ができた分、海外を回る機会が増えていく。<br>このとき「2017年までにタイに住む」と、自分の中で決める。</p>
+            <p class="tl-desc">
+              C・S・Rを仲間に譲り、新会社を設立。<br>広告・マーケティング事業で新しい挑戦を始める。<br>時間ができた分、海外を回る機会が増えていく。<br>このとき「2017年までにタイに住む」と、自分の中で決める。
+            </p>
           </div>
         </div>
 
@@ -1422,7 +1567,9 @@
             <p class="tl-desc">東京と同じ匂いがするバンコクを避け、妻の地元であるパタヤへ。<br>自分のペースで動ける場所を、ここに見つける。</p>
 
             <h3 class="tl-title" style="margin-top: 36px;">機内での出会い、そしてイランへ</h3>
-            <p class="tl-desc">福岡から成田へ向かう機内。隣に座ったイラン人の大学教授との出会い。<br>「フィリピンを良くしたいから会社をやっている」。そう語ると、彼は感激し母国の現状を打ち明ける。<br>「国内に仕事がなく、みな出稼ぎに行ってしまう。教え子たちが働ける場所を作るために力を貸してほしい」。<br>その熱意に動かされ、数ヶ月に一度イランへ通い、ビジネスを形にする日々。<br>しかし2019年の国際情勢の緊迫化、そしてコロナ禍により、その道は断たれる。<br>ビジネスは叶わなかったが、イランという素敵な国の景色と人々の熱気は、今も心に残る。</p>
+            <p class="tl-desc">
+              福岡から成田へ向かう機内。隣に座ったイラン人の大学教授との出会い。<br>「フィリピンを良くしたいから会社をやっている」。そう語ると、彼は感激し母国の現状を打ち明ける。<br>「国内に仕事がなく、みな出稼ぎに行ってしまう。教え子たちが働ける場所を作るために力を貸してほしい」。<br>その熱意に動かされ、数ヶ月に一度イランへ通い、ビジネスを形にする日々。<br>しかし2019年の国際情勢の緊迫化、そしてコロナ禍により、その道は断たれる。<br>ビジネスは叶わなかったが、イランという素敵な国の景色と人々の熱気は、今も心に残る。
+            </p>
           </div>
         </div>
 
@@ -1441,7 +1588,8 @@
           <div class="tl-body">
             <h3 class="tl-title">パタヤで本格事業開始</h3>
             <p class="tl-desc">
-              「ここで事業を興すつもりはなかった」。<br><br>それでもパタヤに根を張り、人をつなぎ続けるうちに事業は広がっていく。<br>今では、日本の経営者たちが自然と集まってくる。<br><br>K2 PATTAYAを中核に、<br>リユース・飲食・進出支援の3本柱で事業を展開している。</p>
+              「ここで事業を興すつもりはなかった」。<br><br>それでもパタヤに根を張り、人をつなぎ続けるうちに事業は広がっていく。<br>今では、日本の経営者たちが自然と集まってくる。<br><br>K2
+              PATTAYAを中核に、<br>リユース・飲食・進出支援の3本柱で事業を展開している。</p>
           </div>
         </div>
 
@@ -1561,8 +1709,8 @@
           <div class="map-image-wrap">
             <picture>
               <source media="(max-width: 768px)" srcset="images/network-map-mobile.jpg">
-              <img src="images/map.jpeg" alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand"
-                class="map-img" />
+              <img src="images/map.jpeg"
+                alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand" class="map-img" />
             </picture>
           </div>
         </div>
@@ -1570,211 +1718,286 @@
       </div>
     </div>
 
+  </section>
 
-    <!-- ═══════════════════════════ MEDIA ═══════════════════════════ -->
-    <section id="media" aria-labelledby="media-heading">
-      <div class="container">
-        <div class="fade-in">
-          <span class="section-eyebrow">Media</span>
-          <h2 class="section-title" id="media-heading">Follow<br>the Journey</h2>
-          <div class="section-rule" aria-hidden="true"></div>
-        </div>
 
-        <div class="media-grid fade-in" style="transition-delay:0.15s;">
-
-          <a href="https://note.com/chieto_amano" target="_blank" rel="noopener noreferrer" class="mcard">
-            <div class="mcard-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.4 2H5.6C3.6 2 2 3.6 2 5.6v12.8C2 20.4 3.6 22 5.6 22h12.8c2 0 3.6-1.6 3.6-3.6V5.6C22 3.6 20.4 2 18.4 2zm-1.8 14H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8z" />
-              </svg>
-            </div>
-            <span class="mcard-name">note</span>
-            <span class="mcard-handle">記事・コラム</span>
-          </a>
-
-          <a href="https://x.com/amano_napoli" target="_blank" rel="noopener noreferrer" class="mcard">
-            <div class="mcard-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </div>
-            <span class="mcard-name">X</span>
-            <span class="mcard-handle">@amano_napoli</span>
-          </a>
-
-          <a href="https://www.instagram.com/chieto_jp/" target="_blank" rel="noopener noreferrer" class="mcard">
-            <div class="mcard-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-            </div>
-            <span class="mcard-name">Instagram</span>
-            <span class="mcard-handle">@chieto_jp</span>
-          </a>
-
-        </div>
+  <!-- ═══════════════════════════ MEDIA ═══════════════════════════ -->
+  <section id="media" aria-labelledby="media-heading">
+    <div class="container">
+      <div class="fade-in">
+        <span class="section-eyebrow">Media</span>
+        <h2 class="section-title" id="media-heading">Follow<br>the Journey</h2>
+        <div class="section-rule" aria-hidden="true"></div>
       </div>
-    </section>
 
+      <div class="media-grid fade-in" style="transition-delay:0.15s;">
 
-    <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
-    <section id="contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="contact-grid">
-
-          <div class="contact-intro fade-in">
-            <span class="section-eyebrow">Contact</span>
-            <h2 id="contact-heading">Let's<br><em>connect.</em></h2>
-            <div class="section-rule" style="margin-top:20px;" aria-hidden="true"></div>
-            <p class="jp">パタヤでのビジネスや、日本とタイをつなぐご相談など、お気軽にご連絡ください。</p>
-            <p>Feel free to reach out for business in Pattaya or connections between Japan and Thailand.</p>
+        <a href="https://note.com/chieto_amano" target="_blank" rel="noopener noreferrer" class="mcard">
+          <div class="mcard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.4 2H5.6C3.6 2 2 3.6 2 5.6v12.8C2 20.4 3.6 22 5.6 22h12.8c2 0 3.6-1.6 3.6-3.6V5.6C22 3.6 20.4 2 18.4 2zm-1.8 14H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8zm0-4H7.4c-.4 0-.8-.4-.8-.8s.4-.8.8-.8h9.2c.4 0 .8.4.8.8s-.4.8-.8.8z" />
+            </svg>
           </div>
+          <span class="mcard-name">note</span>
+          <span class="mcard-handle">記事・コラム</span>
+        </a>
 
-          <div class="clist fade-in" style="transition-delay:0.18s;">
-
-
-            <a href="https://line.me/ti/p/Vgn1_ZlgXN" target="_blank" rel="noopener noreferrer" class="citem">
-              <div class="citem-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-                </svg>
-              </div>
-              <div>
-                <div class="citem-label">LINE</div>
-                <div class="citem-val">LINEで相談</div>
-              </div>
-            </a>
-
-            <a href="https://facebook.com/chieto.amano" target="_blank" rel="noopener noreferrer" class="citem">
-              <div class="citem-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </div>
-              <div>
-                <div class="citem-label">Facebook</div>
-                <div class="citem-val">chieto.amano</div>
-              </div>
-            </a>
-
-
+        <a href="https://x.com/amano_napoli" target="_blank" rel="noopener noreferrer" class="mcard">
+          <div class="mcard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
           </div>
-        </div>
-      </div>
-    </section>
+          <span class="mcard-name">X</span>
+          <span class="mcard-handle">@amano_napoli</span>
+        </a>
 
+        <a href="https://www.instagram.com/chieto_jp/" target="_blank" rel="noopener noreferrer" class="mcard">
+          <div class="mcard-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </div>
+          <span class="mcard-name">Instagram</span>
+          <span class="mcard-handle">@chieto_jp</span>
+        </a>
 
-    <!-- ═══════════════════════════ COOKIE BANNER ═══════════════════════════ -->
-    <div id="cookie-banner" role="dialog" aria-label="Cookie の使用について">
-      <p class="cookie-text">
-        本サイトでは、利用状況の分析のために Cookie を使用しています。
-        詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。
-      </p>
-      <div class="cookie-actions">
-        <button class="cookie-btn cookie-btn-decline" id="cookieDecline">拒否する</button>
-        <button class="cookie-btn cookie-btn-accept" id="cookieAccept">同意する</button>
       </div>
     </div>
-
-    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
-    <footer>
-      <p>© 2026 Chieto Amano — Pattaya, Thailand</p>
-      <a href="privacy.html" style="font-size:0.72rem;color:var(--text-sub);letter-spacing:0.04em;transition:color 0.3s ease;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-sub)'">プライバシーポリシー</a>
-    </footer>
+  </section>
 
 
-    <script>
-      /* ─── COOKIE CONSENT ─── */
-      (function () {
-        const COOKIE_KEY = 'cookie_consent';
-        const banner = document.getElementById('cookie-banner');
-        const consent = localStorage.getItem(COOKIE_KEY);
+  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-grid">
 
-        if (!consent) {
-          // 少し遅らせて表示（ページ読み込み直後は避ける）
-          setTimeout(() => banner.classList.add('visible'), 1200);
-        }
+        <div class="contact-intro fade-in">
+          <span class="section-eyebrow">Contact</span>
+          <h2 id="contact-heading">Let's<br><em>Connect</em></h2>
+          <div class="section-rule" style="margin-top:20px;" aria-hidden="true"></div>
+          <p class="jp">パタヤでのビジネスや、日本とタイをつなぐご相談など、お気軽にご連絡ください。</p>
+          <p>Feel free to reach out for business in Pattaya or connections between Japan and Thailand.</p>
+        </div>
 
-        function hideBanner() {
-          banner.classList.remove('visible');
-        }
+        <div class="clist fade-in" style="transition-delay:0.18s;">
 
-        document.getElementById('cookieAccept').addEventListener('click', function () {
-          localStorage.setItem(COOKIE_KEY, 'accepted');
-          hideBanner();
-          // ここに Google Analytics の初期化コードを追加
-          // loadGoogleAnalytics();
-        });
 
-        document.getElementById('cookieDecline').addEventListener('click', function () {
-          localStorage.setItem(COOKIE_KEY, 'declined');
-          hideBanner();
-        });
-      })();
+          <a href="https://line.me/ti/p/Vgn1_ZlgXN" target="_blank" rel="noopener noreferrer" class="citem">
+            <div class="citem-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+              </svg>
+            </div>
+            <div>
+              <div class="citem-label">LINE</div>
+              <div class="citem-val">LINEで相談</div>
+            </div>
+          </a>
 
-      /* ─── NAVBAR SCROLL ─── */
-      const navbar = document.getElementById('navbar');
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
-      }, { passive: true });
+          <a href="https://facebook.com/chieto.amano" target="_blank" rel="noopener noreferrer" class="citem">
+            <div class="citem-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </div>
+            <div>
+              <div class="citem-label">Facebook</div>
+              <div class="citem-val">chieto.amano</div>
+            </div>
+          </a>
 
-      /* ─── MOBILE MENU ─── */
-      const navToggle = document.getElementById('navToggle');
-      const navLinks = document.getElementById('navLinks');
-      navToggle.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('open');
-        navToggle.classList.toggle('active', isOpen);
-        navToggle.setAttribute('aria-expanded', isOpen);
-        document.body.style.overflow = isOpen ? 'hidden' : '';
+          <a href="https://www.google.com/maps/place/Pattaya,+Chonburi,+Thailand" target="_blank"
+            rel="noopener noreferrer" class="citem">
+            <div class="citem-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+            </div>
+            <div>
+              <div class="citem-label">Location</div>
+              <div class="citem-val">Pattaya, Thailand</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Contact Form (Full Width) -->
+      <div class="contact-form-wrap fade-in" style="transition-delay:0.3s;">
+        <p class="contact-form-title">Send a Message</p>
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mnjgzjdq" method="POST">
+          <input type="text" name="_gotcha" style="display:none">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="お名前 / Name *" required>
+            <input type="text" name="company" placeholder="会社名 / Company">
+          </div>
+          <div class="form-row">
+            <input type="email" name="email" placeholder="メールアドレス / Email *" required>
+            <input type="text" name="referral" placeholder="ご紹介者 / Referred by">
+          </div>
+          <textarea name="message" placeholder="ご相談内容 / Message *" rows="5" required></textarea>
+          <button type="submit" class="form-submit-btn" id="formSubmitBtn">Send Message</button>
+        </form>
+        <div class="form-thanks" id="formThanks">
+          <p>メッセージを受け付けました。ありがとうございます。</p>
+          <p class="thanks-sub">Thank you for your message. I'll get back to you soon.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════ COOKIE BANNER ═══════════════════════════ -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie の使用について">
+    <p class="cookie-text">
+      本サイトでは、利用状況の分析のために Cookie を使用しています。
+      詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。
+    </p>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-btn-decline" id="cookieDecline">拒否する</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAccept">同意する</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer>
+    <p>© 2026 Chieto Amano — Pattaya, Thailand</p>
+    <a href="privacy.html"
+      style="font-size:0.72rem;color:var(--text-sub);letter-spacing:0.04em;transition:color 0.3s ease;"
+      onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--text-sub)'">PRIVACY POLICY</a>
+  </footer>
+
+
+  <script>
+    /* ─── CONTACT FORM (FORMSPREE AJAX) ─── */
+    (function () {
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('formSubmitBtn');
+      const thanks = document.getElementById('formThanks');
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+          .then(function (res) {
+            if (res.ok) {
+              form.style.display = 'none';
+              thanks.classList.add('visible');
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Send Message';
+              alert('送信に失敗しました。もう一度お試しください。');
+            }
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            alert('ネットワークエラーが発生しました。');
+          });
       });
-      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.classList.remove('active');
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }));
+    })();
 
-      /* ─── INTERSECTION OBSERVER — FADE IN ─── */
-      const fadeObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            fadeObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    /* ─── COOKIE CONSENT ─── */
+    (function () {
+      const COOKIE_KEY = 'cookie_consent';
+      const banner = document.getElementById('cookie-banner');
+      const consent = localStorage.getItem(COOKIE_KEY);
 
-      document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+      if (!consent) {
+        // 少し遅らせて表示（ページ読み込み直後は避ける）
+        setTimeout(() => banner.classList.add('visible'), 1200);
+      }
 
-      /* ─── HERO PARALLAX ─── */
-      const heroBg = document.getElementById('heroBg');
-      window.addEventListener('scroll', () => {
-        const s = window.scrollY;
-        if (s < window.innerHeight * 1.2) {
-          heroBg.style.transform = `translateY(${s * 0.38}px)`;
+      function hideBanner() {
+        banner.classList.remove('visible');
+      }
+
+      document.getElementById('cookieAccept').addEventListener('click', function () {
+        localStorage.setItem(COOKIE_KEY, 'accepted');
+        hideBanner();
+        // ここに Google Analytics の初期化コードを追加
+        // loadGoogleAnalytics();
+      });
+
+      document.getElementById('cookieDecline').addEventListener('click', function () {
+        localStorage.setItem(COOKIE_KEY, 'declined');
+        hideBanner();
+      });
+    })();
+
+    /* ─── NAVBAR SCROLL ─── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ─── MOBILE MENU ─── */
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }));
+
+    /* ─── INTERSECTION OBSERVER — FADE IN ─── */
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
         }
-      }, { passive: true });
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-      /* ─── ACTIVE NAV LINK ─── */
-      const sections = document.querySelectorAll('section[id]');
-      const navAs = document.querySelectorAll('.nav-links a');
-      const activeObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navAs.forEach(a => {
-              a.style.color = a.getAttribute('href') === `#${id}` ? 'var(--gold)' : '';
-            });
-          }
-        });
-      }, { threshold: 0.45 });
-      sections.forEach(s => activeObserver.observe(s));
-    </script>
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+    /* ─── HERO PARALLAX ─── */
+    const heroBg = document.getElementById('heroBg');
+    window.addEventListener('scroll', () => {
+      const s = window.scrollY;
+      if (s < window.innerHeight * 1.2) {
+        heroBg.style.transform = `translateY(${s * 0.38}px)`;
+      }
+    }, { passive: true });
+
+    /* ─── ACTIVE NAV LINK ─── */
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-links a');
+    const activeObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAs.forEach(a => {
+            a.style.color = a.getAttribute('href') === `#${id}` ? 'var(--gold)' : '';
+          });
+        }
+      });
+    }, { threshold: 0, rootMargin: '-40% 0px -50% 0px' });
+    sections.forEach(s => activeObserver.observe(s));
+  </script>
 
 </body>
 
