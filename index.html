@@ -10,14 +10,16 @@
     content="Chieto Amano, 天野智人, Pattaya, K2 Pattaya, Japan Thailand business, connector, entrepreneur, Kanpai Reuse, MENLABO">
   <meta name="author" content="Chieto Amano">
   <meta property="og:title" content="Chieto Amano | Pattaya Business Connector">
-  <meta property="og:description" content="Entrepreneur and connector based in Pattaya, Thailand. Building businesses, connecting people, and bridging Japan and Thailand.">
+  <meta property="og:description"
+    content="Entrepreneur and connector based in Pattaya, Thailand. Building businesses, connecting people, and bridging Japan and Thailand.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://chietoamano.com/">
   <meta property="og:image" content="https://chietoamano.com/images/og-image.png">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chieto Amano | Pattaya Business Connector">
-  <meta name="twitter:description" content="Entrepreneur and connector based in Pattaya, Thailand. Building businesses, connecting people, and bridging Japan and Thailand.">
+  <meta name="twitter:description"
+    content="Entrepreneur and connector based in Pattaya, Thailand. Building businesses, connecting people, and bridging Japan and Thailand.">
   <meta name="twitter:image" content="https://chietoamano.com/images/og-image.png">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://chietoamano.com/">
@@ -32,17 +34,17 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHN047XV1Y"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-QHN047XV1Y');
   </script>
 
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, "clarity", "script", "vvpe8lqsrz");
   </script>
 
@@ -116,6 +118,13 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border-bottom-color: var(--gold-border);
+    }
+
+    nav.menu-open {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border-bottom-color: transparent !important;
     }
 
     .nav-logo {
@@ -393,6 +402,17 @@
       color: var(--text-sub);
       opacity: 0;
       animation: fadeIn 0.8s ease 1.2s forwards;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0 10px;
+    }
+
+    .tagline-sep {
+      color: var(--gold);
+      opacity: 0.5;
+      letter-spacing: 0;
     }
 
     .hero-scroll-hint {
@@ -1373,11 +1393,26 @@
         column-gap: 36px;
       }
 
+      .hero-tagline {
+        flex-direction: column;
+        gap: 10px;
+        letter-spacing: 0.22em;
+      }
+
+      .tagline-sep {
+        display: none;
+      }
+
       footer {
         flex-direction: column;
         gap: 14px;
         text-align: center;
         padding: 32px 24px;
+      }
+
+      footer p {
+        position: static;
+        transform: none;
       }
 
       .media-grid {
@@ -1502,7 +1537,13 @@
       </h1>
       <p class="hero-japanese">パタヤで人を繋ぐ</p>
       <div class="hero-rule" aria-hidden="true"></div>
-      <p class="hero-tagline">Entrepreneur &nbsp;&mdash;&nbsp; Connector &nbsp;&mdash;&nbsp; Pattaya</p>
+      <p class="hero-tagline">
+        <span>Entrepreneur</span>
+        <span class="tagline-sep">&mdash;</span>
+        <span>Connector</span>
+        <span class="tagline-sep">&mdash;</span>
+        <span>Pattaya</span>
+      </p>
     </div>
 
     <div class="hero-scroll-hint" aria-hidden="true">
@@ -1521,11 +1562,11 @@
           <span class="section-eyebrow">Identity</span>
           <h2 class="section-title" id="identity-heading">Japan Meets<br>Thailand</h2>
           <div class="section-rule" aria-hidden="true"></div>
-          <p class="identity-jp">日本とタイを繋ぐビジネスコネクターとして、パタヤを拠点に活動。人と人、企業と企業の橋渡しを担い、日々動いている。</p>
-          <p class="identity-jp">リユースビジネス、飲食業、進出支援という3本柱で、パタヤのビジネスの土台を作っている。</p>
-          <p class="identity-jp">パタヤは、最初から目指した場所ではない。ただ、妻の地元であるこの街に根を張り、損得抜きで人を繋いでいたら、東京・大阪・パタヤをまたぐチームが自然とできあがっていた。</p>
-          <p>A Japan — Thailand connector based in Pattaya — not just in theory, but on the ground, in the room, making
-            introductions that stick.</p>
+          <p class="identity-jp">パタヤにいる。拠点はずっとここ。</p>
+          <p class="identity-jp">やっていることは昔から変わらない。人を繋ぐ。それだけ。</p>
+          <p class="identity-jp">東京で経営者同士を繋ぐ場を作っていた頃から、ずっとそうやってきた。パタヤに来たのは妻の地元だったから。ただそれだけ。でも、ここで誰彼構わず繋いでいたら、その話を聞いた日本の仲間たちが訪れてくれるようになった。ありがたい話だと思う。</p>
+          <p class="identity-jp">リユース、飲食、進出支援。今はこの3つを動かしている。壮大な計画があったわけじゃない。必要だったから、始めただけ。</p>
+          <p>Based in Pattaya, connecting Japan and Thailand — on the ground, making introductions that stick.</p>
           <div class="tags">
             <span class="tag">Entrepreneur</span>
             <span class="tag">Connector</span>
@@ -1591,7 +1632,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">株式会社C・S・R 設立</h3>
-            <p class="tl-desc">26歳で独立。<br>東京・池袋を拠点に、仲間とともに走り出す。<br>うまくいかないことも多い。それでも、この一歩がすべての原点。</p>
+            <p class="tl-desc">26歳で独立。東京・池袋を拠点に、仲間とともに走り出す。うまくいかないことも多い。それでも、この一歩がすべての原点。</p>
           </div>
         </div>
 
@@ -1601,8 +1642,7 @@
           <div class="tl-body">
             <h3 class="tl-title">株式会社feemo 設立</h3>
             <p class="tl-desc">
-              C・S・Rを仲間に譲り、新会社を設立。<br>広告・マーケティング事業で新しい挑戦を始める。<br>時間ができた分、海外を回る機会が増えていく。<br>このとき「2017年までにタイに住む」と、自分の中で決める。
-            </p>
+              C・S・Rを仲間に譲り、新会社を設立。広告・マーケティング事業で新しい挑戦を始める。時間ができた分、海外を回る機会が増えていく。このとき「2017年までにタイに住む」と、自分の中で決める。</p>
           </div>
         </div>
 
@@ -1611,7 +1651,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">マレーシアへ移住</h3>
-            <p class="tl-desc">東南アジアへ拠点を移す。<br>毎月のように各国を飛び回る生活。</p>
+            <p class="tl-desc">東南アジアへ拠点を移す。毎月のように各国を飛び回る生活。</p>
           </div>
         </div>
 
@@ -1620,7 +1660,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">フィリピン法人設立</h3>
-            <p class="tl-desc">フィリピンにオフショア拠点を構築。<br>同時にバンコクにも拠点を持ち、日本・フィリピン・タイを行き来する生活が続く。</p>
+            <p class="tl-desc">フィリピンにオフショア拠点を構築。同時にバンコクにも拠点を持ち、日本・フィリピン・タイを行き来する生活が続く。</p>
           </div>
         </div>
 
@@ -1629,11 +1669,14 @@
 
           <div class="tl-body">
             <h3 class="tl-title">バンコクからパタヤへ</h3>
-            <p class="tl-desc">東京と同じ匂いがするバンコクを避け、妻の地元であるパタヤへ。<br>自分のペースで動ける場所を、ここに見つける。</p>
+            <p class="tl-desc">東京と同じ匂いがするバンコクを避け、妻の地元であるパタヤへ。自分のペースで動ける場所を、ここに見つける。</p>
 
             <h3 class="tl-title" style="margin-top: 36px;">機内での出会い、そしてイランへ</h3>
+            <p class="tl-desc">福岡から成田へ向かう機内。隣に座ったイラン人の大学教授との出会い。</p>
+            <p class="tl-desc">「フィリピンを良くしたいから会社をやっている」そう語ると、彼は感激し母国の現状を打ち明ける。</p>
+            <p class="tl-desc" style="margin-bottom: 1.5em;">「国内に仕事がなく、みな出稼ぎに行ってしまう。教え子たちが働ける場所を作るために力を貸してほしい」</p>
             <p class="tl-desc">
-              福岡から成田へ向かう機内。隣に座ったイラン人の大学教授との出会い。<br>「フィリピンを良くしたいから会社をやっている」。そう語ると、彼は感激し母国の現状を打ち明ける。<br>「国内に仕事がなく、みな出稼ぎに行ってしまう。教え子たちが働ける場所を作るために力を貸してほしい」。<br>その熱意に動かされ、数ヶ月に一度イランへ通い、ビジネスを形にする日々。<br>しかし2019年の国際情勢の緊迫化、そしてコロナ禍により、その道は断たれる。<br>ビジネスは叶わなかったが、イランという素敵な国の景色と人々の熱気は、今も心に残る。
+              その熱意に動かされて、数ヶ月に一度イランへ通い、ビジネスを形にする日々。でも、2019年の国際情勢の緊迫化、そしてコロナ禍で、その道は途絶えた。ビジネスにはならなかった。それでも、イランという素敵な国の景色と人々の熱気は、今も心に残っている。
             </p>
           </div>
         </div>
@@ -1643,7 +1686,7 @@
 
           <div class="tl-body">
             <h3 class="tl-title">コロナ禍</h3>
-            <p class="tl-desc">フィリピンがロックダウン。<br>緊急脱出して向かった先は、家族のいるパタヤ。<br>気づけば、ここが完全な拠点に。</p>
+            <p class="tl-desc">フィリピンがロックダウン。緊急脱出して向かった先は、家族のいるパタヤ。気づけば、ここが完全な拠点に。</p>
           </div>
         </div>
 
@@ -1652,9 +1695,8 @@
 
           <div class="tl-body">
             <h3 class="tl-title">パタヤで本格事業開始</h3>
-            <p class="tl-desc">
-              「ここで事業を興すつもりはなかった」。<br><br>それでもパタヤに根を張り、人をつなぎ続けるうちに事業は広がっていく。<br>今では、日本の経営者たちが自然と集まってくる。<br><br>K2
-              PATTAYAを中核に、<br>リユース・飲食・進出支援の3本柱で事業を展開している。</p>
+            <p class="tl-desc">「ここで事業を興すつもりはなかった」</p>
+            <p class="tl-desc">それでもパタヤに根を張り、人をつなぎ続けるうちに事業は広がっていく。今では、日本の経営者たちが自然と集まってくる。K2 PATTAYAを軸に、リユース・飲食・進出支援の3つを動かしている。</p>
           </div>
         </div>
 
@@ -1842,7 +1884,7 @@
 
         <div class="contact-intro fade-in">
           <span class="section-eyebrow">Contact</span>
-          <h2 id="contact-heading">Let's<br><em>Connect</em></h2>
+          <h2 id="contact-heading">Let's<br>Connect</h2>
           <div class="section-rule" style="margin-top:20px;" aria-hidden="true"></div>
           <p class="jp">パタヤでのビジネスや、日本とタイをつなぐご相談など、お気軽にご連絡ください。</p>
           <p>Feel free to reach out for business in Pattaya or connections between Japan and Thailand.</p>
@@ -2018,12 +2060,14 @@
       const isOpen = navLinks.classList.toggle('open');
       navToggle.classList.toggle('active', isOpen);
       navToggle.setAttribute('aria-expanded', isOpen);
+      navbar.classList.toggle('menu-open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
       navLinks.classList.remove('open');
       navToggle.classList.remove('active');
       navToggle.setAttribute('aria-expanded', 'false');
+      navbar.classList.remove('menu-open');
       document.body.style.overflow = '';
     }));
 
