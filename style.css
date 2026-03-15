@@ -659,10 +659,6 @@ section {
   background: url('images/project-napoli.png') center center / cover no-repeat;
 }
 
-.pcard-bg-3 {
-  background: url('images/project-menlabo.png') center center / cover no-repeat;
-}
-
 .pcard-bg-4 {
   background: url('images/project-consulting.jpg') center center / cover no-repeat;
 }
@@ -1095,19 +1091,15 @@ footer p {
   transform: translateX(-50%);
 }
 
-.footer-brand {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--gold);
-  letter-spacing: 0.12em;
-}
-
-.footer-jp {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 300;
+.footer-link {
   font-size: 0.72rem;
   color: var(--text-sub);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--gold);
 }
 
 /* ─── COOKIE BANNER ─── */

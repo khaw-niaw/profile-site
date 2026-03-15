@@ -51,8 +51,6 @@
   document.getElementById('cookieAccept').addEventListener('click', function () {
     localStorage.setItem(COOKIE_KEY, 'accepted');
     hideBanner();
-    // ここに Google Analytics の初期化コードを追加
-    // loadGoogleAnalytics();
   });
 
   document.getElementById('cookieDecline').addEventListener('click', function () {
