@@ -1143,35 +1143,6 @@ section {
   padding-bottom: 0;
 }
 
-footer {
-  padding: 24px 56px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-}
-
-footer p {
-  font-size: 0.72rem;
-  color: var(--text-sub);
-  letter-spacing: 0.04em;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.footer-link {
-  font-size: 0.72rem;
-  color: var(--text-sub);
-  letter-spacing: 0.04em;
-  transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-  color: var(--gold);
-}
-
 /* ─── COOKIE BANNER ─── */
 #cookie-banner {
   position: fixed;
@@ -1406,18 +1377,6 @@ footer p {
 
   .tagline-sep {
     display: none;
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 14px;
-    text-align: center;
-    padding: 32px 24px;
-  }
-
-  footer p {
-    position: static;
-    transform: none;
   }
 
   .media-grid {
