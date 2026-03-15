@@ -96,6 +96,8 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">コンテンツへスキップ</a>
+
   <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
   <nav id="navbar">
     <a href="#hero" class="nav-logo">
@@ -113,6 +115,8 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <main id="main-content">
 
   <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
   <section id="hero" aria-label="Hero">
@@ -169,7 +173,7 @@
           </div>
         </div>
 
-        <div class="identity-visual fade-in" style="transition-delay:0.18s;" aria-hidden="true">
+        <div class="identity-visual fade-in" style="transition-delay:0.18s;">
           <div class="identity-visual-bg"></div>
           <!-- SVG decorative element -->
           <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.04;" viewBox="0 0 480 520"
@@ -213,9 +217,7 @@
         <span class="section-eyebrow">Story</span>
         <h2 class="section-title" id="story-heading">The Journey</h2>
         <div class="section-rule" aria-hidden="true"></div>
-        <p class="story-lead"
-          style="font-size:1.15rem; color:rgba(255,255,255,0.55); font-weight:300; line-height:1.9; margin-top:24px; letter-spacing:0.04em;">
-          東京から東南アジアへ。<br>そして、パタヤへ。</p>
+        <p class="story-lead">東京から東南アジアへ。<br>そして、パタヤへ。</p>
       </div>
 
       <div class="timeline-wrap" style="margin-top:64px;">
@@ -411,7 +413,7 @@
             <picture>
               <source media="(max-width: 768px)" srcset="images/network-map-mobile.jpg">
               <img src="images/map.jpeg"
-                alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand" class="map-img" />
+                alt="East Asia map showing connection between Tokyo, Japan and Pattaya, Thailand" class="map-img" loading="lazy" />
             </picture>
           </div>
         </div>
@@ -534,16 +536,21 @@
       <div class="contact-form-wrap fade-in" style="transition-delay:0.3s;">
         <p class="contact-form-title">Send a Message</p>
         <form id="contactForm" class="contact-form" action="https://formspree.io/f/mnjgzjdq" method="POST">
-          <input type="text" name="_gotcha" style="display:none">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
           <div class="form-row">
-            <input type="text" name="name" placeholder="お名前 / Name *" required>
-            <input type="text" name="company" placeholder="会社名 / Company">
+            <label for="f-name" class="sr-only">お名前 / Name</label>
+            <input type="text" id="f-name" name="name" placeholder="お名前 / Name *" required>
+            <label for="f-company" class="sr-only">会社名 / Company</label>
+            <input type="text" id="f-company" name="company" placeholder="会社名 / Company">
           </div>
           <div class="form-row">
-            <input type="email" name="email" placeholder="メールアドレス / Email *" required>
-            <input type="text" name="referral" placeholder="ご紹介者 / Referred by">
+            <label for="f-email" class="sr-only">メールアドレス / Email</label>
+            <input type="email" id="f-email" name="email" placeholder="メールアドレス / Email *" required>
+            <label for="f-referral" class="sr-only">ご紹介者 / Referred by</label>
+            <input type="text" id="f-referral" name="referral" placeholder="ご紹介者 / Referred by">
           </div>
-          <textarea name="message" placeholder="ご相談内容 / Message *" rows="5" required></textarea>
+          <label for="f-message" class="sr-only">ご相談内容 / Message</label>
+          <textarea id="f-message" name="message" placeholder="ご相談内容 / Message *" rows="5" required></textarea>
           <button type="submit" class="form-submit-btn" id="formSubmitBtn">Send Message</button>
         </form>
         <div class="form-thanks" id="formThanks">
@@ -555,6 +562,8 @@
     </div>
   </section>
 
+
+  </main>
 
   <!-- ═══════════════════════════ COOKIE BANNER ═══════════════════════════ -->
   <div id="cookie-banner" role="dialog" aria-label="Cookie の使用について">
