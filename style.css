@@ -55,12 +55,29 @@ nav {
   border-bottom: 1px solid transparent;
 }
 
+nav::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+
 nav.scrolled {
   padding: 16px 56px;
   background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border-bottom-color: var(--gold-border);
+}
+
+nav.scrolled::after {
+  opacity: 0;
 }
 
 nav.menu-open {
@@ -108,8 +125,9 @@ nav.scrolled .nav-logo img {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-sub);
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
   position: relative;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links a::after {
@@ -187,9 +205,13 @@ nav.scrolled .nav-logo img {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 42%;
+  width: 100vw;
+  height: auto;
   pointer-events: none;
+  opacity: 0.3;
+  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(0.85);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%);
 }
 
 .hero-glow {
@@ -555,6 +577,27 @@ section {
 /* ─── STORY ─── */
 #story {
   background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  opacity: 0.35;
+  filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.9);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.5) 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 20%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.5) 100%);
+  z-index: 0;
+}
+
+#story .container {
+  position: relative;
+  z-index: 1;
 }
 
 .timeline-wrap {
