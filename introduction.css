@@ -381,6 +381,16 @@ section.content-sec {
   margin-bottom: 20px;
 }
 
+.plan-subtitle {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
 .plan-desc {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 0.82rem;
