@@ -5,7 +5,7 @@
   --gold: #C9A84C;
   --gold-light: #E8D5A3;
   --text: #F5F5F5;
-  --text-sub: #888888;
+  --text-sub: rgba(255, 255, 255, 0.75);
   --surface: #050505;
   --border: rgba(255, 255, 255, 0.07);
   --gold-border: rgba(201, 168, 76, 0.25);
@@ -1400,5 +1400,78 @@ section {
   .map-img {
     object-fit: cover;
     object-position: center center;
+  }
+}
+
+/* ═══════════════════════════ INTRO SERVICE BANNER ═══════════════════════════ */
+
+.intro-service-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 36px 48px;
+  border: 1px solid var(--gold-border);
+  background: rgba(201, 168, 76, 0.03);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.intro-service-banner:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.isb-eyebrow {
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.isb-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.isb-desc {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-sub);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.isb-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: gap 0.25s ease;
+}
+
+.intro-service-banner:hover .isb-cta {
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .intro-service-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+    gap: 20px;
   }
 }
