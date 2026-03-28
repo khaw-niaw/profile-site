@@ -136,6 +136,10 @@ nav {
   max-width: 600px;
 }
 
+.sp-br {
+  display: none;
+}
+
 .rule {
   width: 44px;
   height: 2px;
@@ -640,15 +644,26 @@ section.content-sec {
   }
 
   .step {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 20px;
     text-align: left;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    align-items: start;
   }
 
   .step-num {
+    grid-row: 1 / 3;
     margin: 0;
-    flex-shrink: 0;
+    align-self: start;
+  }
+
+  .step-title {
+    align-self: center;
+  }
+
+  .step-desc {
+    grid-column: 2;
   }
 
   .pricing-card {
@@ -692,5 +707,15 @@ section.content-sec {
     white-space: normal;
     padding: 14px 20px;
     line-height: 1.4;
+  }
+
+  .page-lead br,
+  .pricing-value-statement br,
+  .faq-a br {
+    display: none;
+  }
+
+  .sp-br {
+    display: inline;
   }
 }
