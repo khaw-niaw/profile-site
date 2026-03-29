@@ -1452,6 +1452,12 @@ section {
   max-width: 560px;
 }
 
+@media (max-width: 768px) {
+  .isb-desc br {
+    display: none;
+  }
+}
+
 .isb-cta {
   display: flex;
   align-items: center;
